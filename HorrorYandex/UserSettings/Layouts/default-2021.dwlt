@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 151
+  controlID: 72
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 16
+  controlID: 73
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,14 +165,14 @@ MonoBehaviour:
     y: 0
     width: 1116
     height: 653
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
   m_Selected: 1
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 653
     width: 1116
     height: 294
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 22
+  controlID: 97
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 413
     height: 348
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -295,8 +295,8 @@ MonoBehaviour:
     y: 0
     width: 391
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -600,7 +600,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.33564785, y: 0.53117615, z: -0.24104175, w: 0.73965675}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -666,20 +666,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fae90000
-      m_LastClickedID: 59898
-      m_ExpandedIDs: 6c79ffffb079ffff687cffff30fbffff44ef0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: caf9ffffcef9ffffd4f9ffff30fbffffb05f0000986000000e6300001666000038660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: PcForEyesButtonText
-        m_OriginalName: PcForEyesButtonText
+        m_Name: IsOpen
+        m_OriginalName: IsOpen
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -34698
+        m_UserData: 25014
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -733,22 +733,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ToxicFamilyGames/MenuEditor/Resources
+    - Assets/Eyes/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 61
   m_LastFolders:
-  - Assets/ToxicFamilyGames/MenuEditor/Resources
+  - Assets/Eyes/Scripts
   m_LastFoldersGridSize: 61
   m_LastProjectPath: C:\Users\ykpon\Desktop\Unity\HorrorYandex\HorrorYandex
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 406}
-    m_SelectedIDs: 1ca80000
-    m_LastClickedID: 43036
-    m_ExpandedIDs: 000000001476000016760000187600001a7600001c7600001e76000020760000227600002476000026760000287600002a7600002c7600002e76000030760000327600003476000036760000387600003a760000fe7600002c770000447700001ca80000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 3cf50000
+    m_LastClickedID: 62780
+    m_ExpandedIDs: 00000000a0740000a2740000a4740000a6740000a8740000aa740000ac740000ae740000b0740000b2740000b4740000b6740000b8740000ba740000bc740000be740000c4740000c6740000cc740000ce740000d47400002c750000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -776,7 +776,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001476000016760000187600001a7600001c7600001e76000020760000227600002476000026760000287600002a7600002c7600002e76000030760000327600003476000036760000387600003a7600003c7600003e760000
+    m_ExpandedIDs: 00000000a0740000a2740000a4740000a6740000a8740000aa740000ac740000ae740000b0740000b2740000b4740000b6740000b8740000ba740000bc740000be740000c0740000c2740000c4740000c6740000c8740000ca740000cc740000ce740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - C:\Users\ykpon\Desktop\Unity\HorrorYandex\HorrorYandex\Library\PlayModeViewStates\3fb793efa7b597e4480352d87ab87648
+  - C:\Users\ykpon\Desktop\Unity\HorrorYandex\HorrorYandex\Library\PlayModeViewStates\123a9614034dc664eb82576a9dfa7ef3
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0

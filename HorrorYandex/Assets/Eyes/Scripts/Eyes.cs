@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using ToxicFamilyGames.YandexSDK;
 
 [RequireComponent(typeof(Animator))]
 public class Eyes : MonoBehaviour
@@ -17,8 +18,13 @@ public class Eyes : MonoBehaviour
     private bool isForce = false;
     public bool IsForce {
         get { return isForce; }
-        set {
-            if (!CanControl) return;
+        set
+        {
+            if (!CanControl && value)
+            {
+                AdvertisementYandex.ShowRewarded(0);
+                return;
+            }
             if (value) See(value);
             isForce = value;
             _animator.SetBool("IsForceOpen", isForce);
@@ -53,6 +59,7 @@ public class Eyes : MonoBehaviour
         {
             if (GameInput.Key.GetKeyDown("OpenEyes"))
                 IsForce = true;
+
             if (GameInput.Key.GetKeyUp("OpenEyes"))
                 IsForce = false;
         }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using ToxicFamilyGames.YandexSDK;
 
 public class Flashlight : MonoBehaviour
 {
@@ -42,7 +43,11 @@ public class Flashlight : MonoBehaviour
 
     private void Update()
     {
-        if (!BatteryChargeCheck()) return;
+        if (!BatteryChargeCheck())
+        {
+            if (GameInput.Key.GetKeyDown("OnFlashlight")) AdvertisementYandex.ShowRewarded(1);
+            return;
+        }
         if (!gameManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight")) 
             SetActiveFlashlight(!spotLight.gameObject.activeInHierarchy);
         if (isOnFlashlight) DischargingBattery();
