@@ -16,7 +16,6 @@ public class LampOptimisation : MonoBehaviour
 
     private void DetermineVisibilityLamp()
     {
-        Debug.DrawRay(Camera.main.transform.position, transform.position - Camera.main.transform.position, Color.red);
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, transform.position - Camera.main.transform.position, out hit))
         {
