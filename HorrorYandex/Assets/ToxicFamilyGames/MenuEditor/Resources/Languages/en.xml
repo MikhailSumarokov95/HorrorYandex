@@ -31,4 +31,8 @@
 	<text id="PcForEyesButtonText">oops.... looks like you want to sleep, hold "Space" to keep your eyes open</text>
 	<text id="PcPickUpText">Press "E" to pick up</text>
 	<text id="PcFlashlightButtonText">how dark... press "F" to turn on the flashlight!</text>
+	<text id="energyLevelAds">you can also watch an ad to restore energy, to do this, click on the energy drink, or on the eye when the energy is over</text>
+	<text id="batteriesAds">you can also watch ads to restore and change batteries, to do this, click on the battery, or on the flashlight when the charge is over</text>
+	<text id="pcEnergyLevelAds">you can also watch an ad to restore energy, to do this, press the eye open key (space by default) when the energy is over</text>
+	<text id="pcBatteriesAds">you can also watch an ad to change the batteries by pressing the flashlight button (default "F") when the charge is over</text>
 </text>

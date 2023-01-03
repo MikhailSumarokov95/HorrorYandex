@@ -31,4 +31,8 @@
 	<text id="PcForEyesButtonText">ups... parece que quieres dormir, mantén presionada la tecla "Espacio" para mantener los ojos abiertos</text>
 	<text id="PcPickUpText">Presione "E" para recoger</text>
 	<text id="PcFlashlightButtonText">que oscuro... presiona "F" para encender la linterna!</text>
+	<text id="energyLevelAds">también puedes ver un anuncio para recuperar energía, para ello haz clic en la bebida energética, o en el ojo cuando se acabe la energía</text>
+	<text id="batteriesAds">también puede ver anuncios para restaurar y cambiar baterías, para hacer esto, haga clic en la batería o en la linterna cuando termine la carga</text>
+	<text id="pcEnergyLevelAds">también puede ver un anuncio para restaurar la energía, para hacer esto, presione la tecla para abrir los ojos (espacio por defecto) cuando se acabe la energía</text>
+	<text id="pcBatteriesAds">también puede ver un anuncio para cambiar las baterías presionando el botón de la linterna (predeterminado "F") cuando la carga haya terminado</text>
 </texts>

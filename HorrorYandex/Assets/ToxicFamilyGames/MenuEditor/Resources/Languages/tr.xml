@@ -31,4 +31,8 @@
 	<text id="PcForEyesButtonText">ayy... uyumak istiyor gibisin, gözlerini açık tutmak için "Boşluk"a basılı tut</text>
 	<text id="PcPickUpText">Almak için "E"ye basın</text>
 	<text id="PcFlashlightButtonText">ne kadar karanlık... el fenerini açmak için "F" ye basın!</text>
+	<text id="energyLevelAds">Ayrıca enerjiyi geri kazanmak için bir reklam izleyebilirsiniz, bunun için enerji içeceğine veya enerji bittiğinde göze tıklayabilirsiniz</text>
+	<text id="batteriesAds">pilleri yenilemek ve değiştirmek için reklamları da izleyebilirsiniz, bunun için pili veya şarj bittiğinde el fenerini tıklayın</text>
+	<text id="pcEnergyLevelAds">enerjiyi geri kazanmak için bir reklam da izleyebilirsiniz, bunun için enerji bittiğinde göz açma tuşuna (varsayılan olarak boşluk) basın</text>
+	<text id="pcBatteriesAds">şarj bittiğinde el feneri düğmesine (varsayılan "F") basarak pilleri değiştirmek için bir reklam da izleyebilirsiniz</text>
 </text>

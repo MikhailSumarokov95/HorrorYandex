@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using ToxicFamilyGames.YandexSDK;
 public class GameManager : MonoBehaviour
 {
     public bool PauseKeyLock { get; set; }
@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     private LevelsCreator _levelCreator;
 
     public bool IsPause { get; private set; }
+
+    private void Awake()
+    {
+        IsMobile = AuthorizationYandex.IsMobile();
+    }
 
     private void Start()
     {

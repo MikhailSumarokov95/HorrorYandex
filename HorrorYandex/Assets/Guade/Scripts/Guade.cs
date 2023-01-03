@@ -20,6 +20,7 @@ public class Guade : MonoBehaviour
     [SerializeField] private TMP_Text energyLevelText;
     [SerializeField] private Image handEnergyLevelImage;
     [SerializeField] private TMP_Text energyLevelLookForEnergyText;
+    [SerializeField] private TMP_Text energyLevelAdsText;
     [SerializeField] private Image handTutorialPickUpImage;
     [SerializeField] private TMP_Text handTutorialPickUpText;
     [SerializeField] private Button pickUpButton;
@@ -28,6 +29,7 @@ public class Guade : MonoBehaviour
     [SerializeField] private Button isOffFlashlightButton;
     [SerializeField] private TMP_Text batteriesText;
     [SerializeField] private TMP_Text batteriesFindText;
+    [SerializeField] private TMP_Text batteriesAdsText;
     [SerializeField] private GameObject monster;
     [SerializeField] private Character player;
     [SerializeField] private GameObject head;
@@ -94,6 +96,22 @@ public class Guade : MonoBehaviour
         else handTutorialPickUpText.gameObject.SetActive(false);
         energyLevelLookForEnergyText.gameObject.SetActive(false);
 
+        energyLevelAdsText.gameObject.SetActive(true);
+        if (gameManager.IsMobile)
+        {
+            handEnergyLevelImage.gameObject.SetActive(true);
+            handForEyesButtonImage.gameObject.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        energyLevelAdsText.gameObject.SetActive(false);
+        if (gameManager.IsMobile)
+        {
+            handEnergyLevelImage.gameObject.SetActive(false);
+            handForEyesButtonImage.gameObject.SetActive(false);
+        }
+
         flashlight.gameObject.SetActive(true);
         flashlight.GetComponent<Flashlight>().SetActiveFlashlight(false);
 
@@ -120,6 +138,14 @@ public class Guade : MonoBehaviour
 
         batteriesFindText.gameObject.SetActive(false);
         batteriesText.gameObject.SetActive(false);
+
+        batteriesAdsText.gameObject.SetActive(true);
+        if (gameManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        batteriesAdsText.gameObject.SetActive(false);
+        if (gameManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(false);
 
         head.transform.localRotation = Quaternion.identity;
         player.isLocked = true;
