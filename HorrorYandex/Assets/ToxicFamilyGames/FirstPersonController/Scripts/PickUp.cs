@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using HighlightPlus;
 
@@ -7,7 +6,6 @@ public class PickUp : MonoBehaviour
     public bool OnSearchedObject { get; private set; }
     [SerializeField] private float distaceSearchObject;
     [SerializeField] private GameObject pickUpButton;
-    [SerializeField] private GameObject pickUpText;
     [SerializeField] private Energy energy;
     [SerializeField] private Flashlight flashlight;
     [SerializeField] private Coins coins;
@@ -20,7 +18,6 @@ public class PickUp : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         pickUpButton.SetActive(false);
-        pickUpText.SetActive(false);
     }
 
     private void Update()
