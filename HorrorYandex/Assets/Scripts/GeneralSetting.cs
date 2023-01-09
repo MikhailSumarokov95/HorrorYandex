@@ -10,17 +10,18 @@ public class GeneralSetting : MonoBehaviour
     private Slider turningSpeedSlider;
     private Slider musicVolumeSlider;
 
-    private bool isActiveMusic;
+    private bool isActiveMusic = true;
     public bool IsActiveMusic { 
         get 
         { 
-            return IsActiveMusic;
+            return isActiveMusic;
         } 
         set
         {
             isActiveMusic = value;
-            AudioListener.pause = !isActiveMusic;
-        } 
+            if (value) AudioListener.volume = MusicVolume;
+            else AudioListener.volume = 0;
+        }
     }
 
     private float turningSpeed;
@@ -49,6 +50,7 @@ public class GeneralSetting : MonoBehaviour
             if (value < 0) musicVolume = 0;
             else if (value > 1) musicVolume = 1;
             else musicVolume = value;
+            if (!IsActiveMusic) return;
             AudioListener.volume = musicVolume;
         } 
     }

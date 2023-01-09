@@ -53,7 +53,6 @@ namespace ToxicFamilyGames.YandexSDK
         private void MuteVoice(bool value)
         {
             AudioListener.pause = value;
-            AudioListener.volume = value ? 0 : 1;
         }
 
         #region called from JavaScript
