@@ -28,7 +28,7 @@
 	<text id="MusicVolumeText">Volumen de música</text>
 	<text id="headerWinGame">ganar</text>
 	<text id="returnText">atrás</text>
-	<text id="PcForEyesButtonText">ups... parece que quieres dormir, mantén presionada la tecla "Espacio" para mantener los ojos abiertos</text>
+	<text id="PcForEyesButtonText">oops... pareces tener sueño, presiona Espacio para mantener los ojos abiertos, luego presiona nuevamente para relajar los ojos</text>
 	<text id="PcPickUpText">Presione "E" para recoger</text>
 	<text id="PcFlashlightButtonText">que oscuro... presiona "F" para encender la linterna!</text>
 	<text id="energyLevelAds">también puedes ver un anuncio para recuperar energía, para ello haz clic en la bebida energética, o en el ojo cuando se acabe la energía</text>

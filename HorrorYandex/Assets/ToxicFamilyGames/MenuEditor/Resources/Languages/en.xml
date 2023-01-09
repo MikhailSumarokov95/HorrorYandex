@@ -28,7 +28,7 @@
 	<text id="MusicVolumeText">Music Volume</text>
 	<text id="headerWinGame">win</text>
 	<text id="returnText">back</text>
-	<text id="PcForEyesButtonText">oops.... looks like you want to sleep, hold "Space" to keep your eyes open</text>
+	<text id="PcForEyesButtonText">oops... you seem to be sleepy, press Space to keep your eyes open, then press again to relax your eyes</text>
 	<text id="PcPickUpText">Press "E" to pick up</text>
 	<text id="PcFlashlightButtonText">how dark... press "F" to turn on the flashlight!</text>
 	<text id="energyLevelAds">you can also watch an ad to restore energy, to do this, click on the energy drink, or on the eye when the energy is over</text>

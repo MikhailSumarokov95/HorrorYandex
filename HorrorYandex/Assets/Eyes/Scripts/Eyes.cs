@@ -58,10 +58,7 @@ public class Eyes : MonoBehaviour
         if (!gameManager.IsMobile)
         {
             if (GameInput.Key.GetKeyDown("OpenEyes"))
-                IsForce = true;
-
-            if (GameInput.Key.GetKeyUp("OpenEyes"))
-                IsForce = false;
+                IsForce = !IsForce;
         }
 
         if (!IsOpen) return;

@@ -28,7 +28,7 @@
 	<text id="MusicVolumeText">Müzik Ses Düzeyi</text>
 	<text id="headerWinGame">kazan</text>
 	<text id="returnText">geri</text>
-	<text id="PcForEyesButtonText">ayy... uyumak istiyor gibisin, gözlerini açık tutmak için "Boşluk"a basılı tut</text>
+	<text id="PcForEyesButtonText">ayy... uykunuz gelmiş gibi görünüyor, gözlerinizi açık tutmak için Boşluk tuşuna basın, ardından gözlerinizi rahatlatmak için tekrar basın</text>
 	<text id="PcPickUpText">Almak için "E"ye basın</text>
 	<text id="PcFlashlightButtonText">ne kadar karanlık... el fenerini açmak için "F" ye basın!</text>
 	<text id="energyLevelAds">Ayrıca enerjiyi geri kazanmak için bir reklam izleyebilirsiniz, bunun için enerji içeceğine veya enerji bittiğinde göze tıklayabilirsiniz</text>
