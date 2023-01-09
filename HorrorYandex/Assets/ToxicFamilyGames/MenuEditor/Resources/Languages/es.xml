@@ -35,4 +35,8 @@
 	<text id="batteriesAds">también puede ver anuncios para restaurar y cambiar baterías, para hacer esto, haga clic en la batería o en la linterna cuando termine la carga</text>
 	<text id="pcEnergyLevelAds">también puede ver un anuncio para restaurar la energía, para hacer esto, presione la tecla para abrir los ojos (espacio por defecto) cuando se acabe la energía</text>
 	<text id="pcBatteriesAds">también puede ver un anuncio para cambiar las baterías presionando el botón de la linterna (predeterminado "F") cuando la carga haya terminado</text>
+	<text id="pcAdsEnergy">Presione la barra espaciadora para ver un anuncio de recuperación de energía</text>
+	<text id="pcAdsBattery">Presione "F" para ver anuncios para cambiar las baterías de las linternas</text>
+	<text id="mobileAdsEnergy">Haga clic en el icono de energía o de ojo para ver un anuncio de recuperación de energía</text>
+	<text id="mobileAdsBattery">Haga clic en el ícono de la batería o la linterna para ver anuncios para cambiar las baterías de la linterna</text>
 </texts>

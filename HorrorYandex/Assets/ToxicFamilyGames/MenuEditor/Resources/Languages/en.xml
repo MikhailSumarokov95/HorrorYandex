@@ -35,4 +35,8 @@
 	<text id="batteriesAds">you can also watch ads to restore and change batteries, to do this, click on the battery, or on the flashlight when the charge is over</text>
 	<text id="pcEnergyLevelAds">you can also watch an ad to restore energy, to do this, press the eye open key (space by default) when the energy is over</text>
 	<text id="pcBatteriesAds">you can also watch an ad to change the batteries by pressing the flashlight button (default "F") when the charge is over</text>
+	<text id="pcAdsEnergy">Press the spacebar to view an ad for energy recovery</text>
+	<text id="pcAdsBattery">Press "F" to watch ads for changing flashlight batteries</text>
+	<text id="mobileAdsEnergy">Click on the energy or eye icon to view an ad for energy recovery</text>
+	<text id="mobileAdsBattery">Click on the battery or flashlight icon to view ads for changing flashlight batteries</text>
 </text>

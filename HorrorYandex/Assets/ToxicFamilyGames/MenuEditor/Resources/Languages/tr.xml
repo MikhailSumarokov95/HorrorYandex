@@ -35,4 +35,8 @@
 	<text id="batteriesAds">pilleri yenilemek ve değiştirmek için reklamları da izleyebilirsiniz, bunun için pili veya şarj bittiğinde el fenerini tıklayın</text>
 	<text id="pcEnergyLevelAds">enerjiyi geri kazanmak için bir reklam da izleyebilirsiniz, bunun için enerji bittiğinde göz açma tuşuna (varsayılan olarak boşluk) basın</text>
 	<text id="pcBatteriesAds">şarj bittiğinde el feneri düğmesine (varsayılan "F") basarak pilleri değiştirmek için bir reklam da izleyebilirsiniz</text>
+	<text id="pcAdsEnergy">Enerji geri kazanımı için bir reklam görüntülemek üzere boşluk çubuğuna basın</text>
+	<text id="pcAdsBattery">El feneri pillerini değiştirme reklamlarını izlemek için "F"ye basın</text>
+	<text id="mobileAdsEnergy">Enerji geri kazanımı için bir reklam görüntülemek üzere enerji veya göz simgesini tıklayın</text>
+	<text id="mobileAdsBattery">El feneri pillerini değiştirme reklamlarını görüntülemek için pil veya el feneri simgesini tıklayın</text>
 </text>
