@@ -3,6 +3,8 @@ using TMPro;
 
 public class EscapeMode : Level
 {
+    [SerializeField] private GameObject battery;
+    [SerializeField] private int amountBattery = 3;
     [SerializeField] private GameObject key;
     [SerializeField] private int[] numberOfKeysToWinDependingOnTheLevelNumber;
     private int _numberFoundKeys;
@@ -17,6 +19,7 @@ public class EscapeMode : Level
         _numberFoundKeysText = _numberFoundKeysGO.transform.GetChild(0).GetComponent<TMP_Text>();
         SetTextNumberFoundKeys(0);
         _map.CreateRandomObjectsOnLevel(key, numberOfKeysToWinDependingOnTheLevelNumber[_difficultyLevelNumber]);
+        _map.CreateRandomObjectsOnLevel(battery, amountBattery);
     }
 
     private void OnDestroy()

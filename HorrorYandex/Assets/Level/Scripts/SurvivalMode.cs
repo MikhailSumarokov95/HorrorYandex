@@ -17,9 +17,7 @@ public class SurvivalMode : Level
     }
 
     [SerializeField] private GameObject battery;
-    [SerializeField] private GameObject powerEngineer;
     [SerializeField] private int amountBattery = 3;
-    [SerializeField] private int amountPowerEnginner = 3;
     [SerializeField] private int[] timerTimeDependingOnTheLevelNumber;
     private float _timer;
     private TMP_Text _timerText;
@@ -34,7 +32,6 @@ public class SurvivalMode : Level
         _timerText.text = "0";
         Timer = timerTimeDependingOnTheLevelNumber[NumberLevel];
         _map.CreateRandomObjectsOnLevel(battery, amountBattery);
-        _map.CreateRandomObjectsOnLevel(powerEngineer, amountPowerEnginner);
     }
 
     private void OnDestroy()

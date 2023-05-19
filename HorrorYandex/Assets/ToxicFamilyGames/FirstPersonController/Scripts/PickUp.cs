@@ -4,9 +4,8 @@ using HighlightPlus;
 public class PickUp : MonoBehaviour
 {
     public bool OnSearchedObject { get; private set; }
-    [SerializeField] private float distaceSearchObject;
+    [SerializeField] private float distanceSearchObject;
     [SerializeField] private GameObject pickUpButton;
-    [SerializeField] private Energy energy;
     [SerializeField] private Flashlight flashlight;
     [SerializeField] private Coins coins;
     private GameObject searchedObject;
@@ -37,18 +36,12 @@ public class PickUp : MonoBehaviour
     {
         RaycastHit hit;
         var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (!Physics.Raycast(ray, out hit, distaceSearchObject))
+        if (!Physics.Raycast(ray, out hit, distanceSearchObject))
         {
             ShowPlayerTheyCanTakeItem(false, searchedObject);
             searchedObject = null;
             reward = null;
             return;
-        }
-        else if (hit.collider.CompareTag("PowerEngineer"))
-        {
-            searchedObject = hit.collider.gameObject;
-            reward = energy.SetFullEnergy;
-            ShowPlayerTheyCanTakeItem(true, searchedObject);
         }
         else if (hit.collider.CompareTag("Batteries"))
         {
