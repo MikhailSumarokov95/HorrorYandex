@@ -11,16 +11,7 @@ public class Guade : MonoBehaviour
     [SerializeField] private Flashlight flashlight;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private PickUp pickUp;
-    [SerializeField] private Energy energy;
     [SerializeField] private GameObject battery;
-    [SerializeField] private GameObject energyDrink;
-    [SerializeField] private Image handForEyesButtonImage;
-    [SerializeField] private TMP_Text forEyesButtonText;
-    [SerializeField] private Button isCloseEyesButton;
-    [SerializeField] private TMP_Text energyLevelText;
-    [SerializeField] private Image handEnergyLevelImage;
-    [SerializeField] private TMP_Text energyLevelLookForEnergyText;
-    [SerializeField] private TMP_Text energyLevelAdsText;
     [SerializeField] private Image handTutorialPickUpImage;
     [SerializeField] private TMP_Text handTutorialPickUpText;
     [SerializeField] private Button pickUpButton;
@@ -49,69 +40,8 @@ public class Guade : MonoBehaviour
         gameManager.PauseKeyLock = false;
     }
 
-    private void Update()
-    {
-        if (energy.Value < 0.05) energy.SetFullEnergy();
-    }
-
     private IEnumerator GuadeScenario()
     {
-        if (gameManager.IsMobile) handForEyesButtonImage.gameObject.SetActive(true);
-        forEyesButtonText.gameObject.SetActive(true);
-        
-        if (gameManager.IsMobile) yield return new WaitForButtonClick(isCloseEyesButton);
-        else yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-
-        if (gameManager.IsMobile) handForEyesButtonImage.gameObject.SetActive(false);
-        forEyesButtonText.gameObject.SetActive(false);
-
-        energyLevelText.gameObject.SetActive(true);
-        handEnergyLevelImage.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(5f);
-
-        energyLevelText.gameObject.SetActive(false);
-        handEnergyLevelImage.gameObject.SetActive(false);
-
-        energyLevelLookForEnergyText.gameObject.SetActive(true);
-        energyDrink.SetActive(true);
-
-        while(energyDrink != null)
-        {
-            if (pickUp.OnSearchedObject)
-            {
-                if (gameManager.IsMobile) handTutorialPickUpImage.gameObject.SetActive(true);
-                else handTutorialPickUpText.gameObject.SetActive(true);
-            }
-
-            else
-            {
-                if (gameManager.IsMobile) handTutorialPickUpImage.gameObject.SetActive(false);
-                else handTutorialPickUpText.gameObject.SetActive(false);
-            }
-            yield return null;
-        }
-
-        if (gameManager.IsMobile) handTutorialPickUpImage.gameObject.SetActive(false);
-        else handTutorialPickUpText.gameObject.SetActive(false);
-        energyLevelLookForEnergyText.gameObject.SetActive(false);
-
-        energyLevelAdsText.gameObject.SetActive(true);
-        if (gameManager.IsMobile)
-        {
-            handEnergyLevelImage.gameObject.SetActive(true);
-            handForEyesButtonImage.gameObject.SetActive(true);
-        }
-
-        yield return new WaitForSeconds(3f);
-
-        energyLevelAdsText.gameObject.SetActive(false);
-        if (gameManager.IsMobile)
-        {
-            handEnergyLevelImage.gameObject.SetActive(false);
-            handForEyesButtonImage.gameObject.SetActive(false);
-        }
-
         flashlight.gameObject.SetActive(true);
         flashlight.GetComponent<Flashlight>().SetActiveFlashlight(false);
 

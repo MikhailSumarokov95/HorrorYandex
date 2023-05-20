@@ -18,15 +18,11 @@ public class Monster : MonoBehaviour
     private NavMeshAgent _monsterNMA;
     private CapsuleCollider _monsterCollider;
     private Level _level;
-
+    
     private void Start()
     {
         _monsterCollider = GetComponent<CapsuleCollider>();
         _monsterNMA = GetComponent<NavMeshAgent>();
-    }
-
-    private void OnEnable()
-    {
         _level = FindObjectOfType<Level>();
     }
 

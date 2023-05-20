@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("guade", 0) == 0)
         {
-            _levelCreator.CreateGuadeLevel();
+            _levelCreator.CreateGuideLevel();
             gameTable.SetActive(true);
         }
         else StartMenu();

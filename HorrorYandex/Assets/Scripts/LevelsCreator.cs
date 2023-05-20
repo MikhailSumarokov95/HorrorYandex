@@ -9,10 +9,11 @@ public class LevelsCreator : MonoBehaviour
     [SerializeField] private GameObject[] modeForLevelNumberPrefabs;
     [SerializeField] private GameObject[] mapPrefabs;
     [SerializeField] private GameObject menuRoom;
-    [SerializeField] private GameObject guadeMobile;
-    [SerializeField] private GameObject guadePC;
+    [SerializeField] private GameObject guideMobile;
+    [SerializeField] private GameObject guidePC;
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject monster;
+    [SerializeField] private GameObject[] monsters;
+    private GameObject _currentMonster;
     private GameObject _currentLevel;
 
     private void Start()
@@ -27,7 +28,7 @@ public class LevelsCreator : MonoBehaviour
         var numberMap = Random.Range(0, mapPrefabs.Length);
         _currentLevel = Instantiate(mapPrefabs[numberMap], Vector3.zero, Quaternion.identity);
         player.SetActive(false);
-        monster.SetActive(false);
+        Destroy(_currentMonster);
         StartCoroutine(WaitOneFrameAndInitializationLevel(number));
     }
 
@@ -35,27 +36,27 @@ public class LevelsCreator : MonoBehaviour
     {
         if (_currentLevel != null) Destroy(_currentLevel);
         menuRoom.SetActive(true);
-        monster.SetActive(false);
+        Destroy(_currentMonster);
         player.SetActive(false);
     }
 
-    public void CreateGuadeLevel()
+    public void CreateGuideLevel()
     {
         menuRoom.SetActive(false);
         if (FindObjectOfType<GameManager>().IsMobile)
         {
-            guadeMobile.SetActive(true);
-            _currentLevel = guadeMobile;
+            guideMobile.SetActive(true);
+            _currentLevel = guideMobile;
         }
         else
         {
-            guadePC.SetActive(true);
-            _currentLevel = guadePC;
+            guidePC.SetActive(true);
+            _currentLevel = guidePC;
         }
 
         player.SetActive(true);
-        var guade = _currentLevel.GetComponent<Guade>();
-        player.transform.SetPositionAndRotation(guade.PointSpawnPlayer.position, guade.PointSpawnPlayer.rotation);
+        var guide = _currentLevel.GetComponent<Guade>();
+        player.transform.SetPositionAndRotation(guide.PointSpawnPlayer.position, guide.PointSpawnPlayer.rotation);
     }
 
     private void InitializationLevel(int number)
@@ -65,12 +66,12 @@ public class LevelsCreator : MonoBehaviour
         var level = FindObjectOfType<Level>();
         level.NumberLevel = NumberCurrentLevel = number;
         map.GetComponent<NavMeshSurface>().BuildNavMesh();
+        _currentMonster = Instantiate(monsters[Random.Range(0, monsters.Length)]);
         player.SetActive(true);
-        monster.SetActive(true);
         var playerSpawnPoint = map.GetSpawnPoint();
         var monsterSpawnPoint = map.GetSpawnPoint();
         player.transform.SetPositionAndRotation(playerSpawnPoint.position, playerSpawnPoint.rotation);
-        monster.transform.SetPositionAndRotation(monsterSpawnPoint.position, monsterSpawnPoint.rotation);
+        _currentMonster.transform.SetPositionAndRotation(monsterSpawnPoint.position, monsterSpawnPoint.rotation);
     }
 
     private IEnumerator WaitOneFrameAndInitializationLevel(int number)
@@ -88,6 +89,6 @@ public class LevelsCreator : MonoBehaviour
             if (map.GetComponent<Map>() == null) Debug.LogError("Map does not contain script \"Map\"");
     }
 
-    [ContextMenu("ClearSaveGuade")]
-    public void ClearSaveGuade() => PlayerPrefs.SetInt("guade", 0);
+    [ContextMenu("ClearSaveGuide")]
+    public void ClearSaveGuide() => PlayerPrefs.SetInt("guide", 0);
 }

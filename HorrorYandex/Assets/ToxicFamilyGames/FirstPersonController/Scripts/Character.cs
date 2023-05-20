@@ -94,7 +94,7 @@ namespace ToxicFamilyGames.FirstPersonController
             isLocked = true;
             while (true)
             {
-                rotationForLookAnMonster = Quaternion.LookRotation(- monsterTr.forward + monsterTr.up * 0.3f);
+                rotationForLookAnMonster = Quaternion.LookRotation(monsterTr.forward + monsterTr.up * 0.3f);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotationForLookAnMonster, 0.1f);
                 if (Mathf.Abs(transform.rotation.eulerAngles.y - rotationForLookAnMonster.eulerAngles.y) < 1f) break;
                 yield return null;
