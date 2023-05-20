@@ -27,11 +27,10 @@ public class Guade : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(GuadeScenario());
-        flashlight.gameObject.SetActive(false);
+        //flashlight.OnDisable();
         goPauseButton.gameObject.SetActive(false);
-        flashlight.OnDisable();
         gameManager.PauseKeyLock = true;
+        StartCoroutine(GuadeScenario());
     }
 
     private void OnDisable()

@@ -10,7 +10,10 @@ public class LevelsProgress : MonoBehaviour
     private void Awake()
     {
         foreach (var numberLevel in levelsOpenAtBeginningOfGame)
-            PlayerPrefs.SetInt(level[numberLevel].NameLevels, 1);
+        {
+            GSPrefs.SetInt(level[numberLevel].NameLevels, 1);
+            GSPrefs.Save();
+        }
     }
 
     private void Start()
@@ -21,7 +24,8 @@ public class LevelsProgress : MonoBehaviour
     public void OpenLevel(int levelNumber)
     {
         if (levelNumber >= level.Length) return;
-        PlayerPrefs.SetInt(level[levelNumber].NameLevels, 1);
+        GSPrefs.SetInt(level[levelNumber].NameLevels, 1);
+        GSPrefs.Save();
         ActivationOfOpenLevelButtons();
     }
 
@@ -29,7 +33,10 @@ public class LevelsProgress : MonoBehaviour
     public void ResetAllProgress()
     {
         for (var i = 1; i < level.Length; i++)
-            PlayerPrefs.SetInt(level[i].NameLevels, 0);
+        {
+            GSPrefs.SetInt(level[i].NameLevels, 0);
+            GSPrefs.Save();
+        }
         DisableAllLevelButtons();
     }
 
@@ -46,9 +53,9 @@ public class LevelsProgress : MonoBehaviour
     {
         DisableAllLevelButtons();
         foreach (var level in this.level)
-            if (PlayerPrefs.GetInt(level.NameLevels, 0) == 0)
+            if (GSPrefs.GetInt(level.NameLevels, 0) == 0)
                 level.Closed.gameObject.SetActive(true);
-            else if (PlayerPrefs.GetInt(level.NameLevels, 0) == 1)
+            else if (GSPrefs.GetInt(level.NameLevels, 0) == 1)
                 level.Opened.gameObject.SetActive(true);
             else Debug.LogError("Wrong level save loaded");
     }

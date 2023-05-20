@@ -1,5 +1,6 @@
+using GameScore;
 using UnityEngine;
-using ToxicFamilyGames.YandexSDK;
+
 public class GameManager : MonoBehaviour
 {
     public bool PauseKeyLock { get; set; }
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        IsMobile = AuthorizationYandex.IsMobile();
+        if (!Application.isEditor) GS_Device.IsMobile();
+        if (!Application.isEditor) PlayerPrefs.SetString("selectedLanguage", GS_Language.Current());
     }
 
     private void Start()
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
         _levelCreator.ReturnMenu();
         OnPause(false);
         pauseTable.SetActive(false);
+        GSConnect.ShowMidgameAd();
     }
 
     public void StartLevel()
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
         _levelCreator.CreateLevel(_levelCreator.NumberCurrentLevel);
         Cursor.lockState = CursorLockMode.Locked;
         OnPause(false);
+        GSConnect.ShowMidgameAd();
     }
 
     public void OnWin()

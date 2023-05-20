@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using ToxicFamilyGames.YandexSDK;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : MonoBehaviour, IGSPurchase
 {
     [SerializeField] private float dischargingFactor = 0.005f;
     [SerializeField] private Light spotLight;
@@ -16,6 +15,8 @@ public class Flashlight : MonoBehaviour
     private float batteryCharge = 1f;
     private float maxIntesityLight;
     private GameManager gameManager;
+
+    public bool IsEndless { get; set; }
 
     private void Awake()
     {
@@ -45,13 +46,15 @@ public class Flashlight : MonoBehaviour
     {
         if (!BatteryChargeCheck())
         {
-            if (GameInput.Key.GetKeyDown("OnFlashlight")) AdvertisementYandex.ShowRewarded(1);
+            if (GameInput.Key.GetKeyDown("OnFlashlight")) GSConnect.ShowRewardedAd(this);
             return;
         }
         if (!gameManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight")) 
             SetActiveFlashlight(!spotLight.gameObject.activeInHierarchy);
-        if (isOnFlashlight) DischargingBattery();
+        if (isOnFlashlight && !IsEndless) DischargingBattery();
     }
+
+    public void RewardPerPurchase() => SetFullCharge();
 
     public void SetFullCharge()
     {
