@@ -42,6 +42,7 @@ public class Guade : MonoBehaviour
     private IEnumerator GuadeScenario()
     {
         flashlight.gameObject.SetActive(true);
+        yield return null;
         flashlight.GetComponent<Flashlight>().SetActiveFlashlight(false);
 
         flashlightButtonText.gameObject.SetActive(true);

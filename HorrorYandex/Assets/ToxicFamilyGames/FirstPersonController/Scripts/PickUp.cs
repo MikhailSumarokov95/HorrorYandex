@@ -1,11 +1,13 @@
 using UnityEngine;
 using HighlightPlus;
+using TMPro;
 
 public class PickUp : MonoBehaviour
 {
     public bool OnSearchedObject { get; private set; }
     [SerializeField] private float distanceSearchObject;
     [SerializeField] private GameObject pickUpButton;
+    [SerializeField] private TMP_Text pickUpText;
     [SerializeField] private Flashlight flashlight;
     [SerializeField] private Coins coins;
     private GameObject searchedObject;
@@ -78,6 +80,7 @@ public class PickUp : MonoBehaviour
         }
         catch { }
         if (gameManager.IsMobile) pickUpButton.SetActive(value);
+        else pickUpText.gameObject.SetActive(value);
         OnSearchedObject = value;
     }
 
