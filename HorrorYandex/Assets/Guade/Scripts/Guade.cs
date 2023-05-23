@@ -80,7 +80,7 @@ public class Guade : MonoBehaviour
         head.transform.localRotation = Quaternion.identity;
         player.isLocked = true;
         monster.SetActive(true);
-        var monsterPosition = head.transform.position - head.transform.transform.forward * 2 + new Vector3(0, -1.8f, 0);
+        var monsterPosition = head.transform.position - head.transform.transform.forward * 3 + new Vector3(0, -1.8f, 0);
         var monsterRotation = player.transform.rotation * monster.transform.rotation;
         monster.transform.SetPositionAndRotation(monsterPosition, monsterRotation);
 
