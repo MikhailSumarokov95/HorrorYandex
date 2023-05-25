@@ -2984,7 +2984,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4078
+  m_VersionIndex: 4081
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3092,7 +3092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f26f5cb38a08844f948fec6934d726d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 3811944615327578145, guid: 60c1fd27597684a4a80d56a709171a40, type: 3}
+  monsterPrefab: {fileID: 6242726964152663119, guid: 0c007e06456fa0f42a8bc3e90515b052, type: 3}
   monsterSpawnPoint:
   - {fileID: 6618688548769181204}
   - {fileID: 5179246011949306792}

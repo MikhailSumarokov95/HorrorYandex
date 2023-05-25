@@ -51,8 +51,6 @@ MonoBehaviour:
   - 100
   - 150
   IsGameOver: 0
-  battery: {fileID: 3486187060587981701, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
-  powerEngineer: {fileID: 148312557185659057, guid: 1064b6b8ea7c8cc449ee634e9245be1a, type: 3}
+  battery: {fileID: 606919714748821360, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
   amountBattery: 5
-  amountPowerEnginner: 5
   timerTimeDependingOnTheLevelNumber: 64000000c80000002c01000090010000

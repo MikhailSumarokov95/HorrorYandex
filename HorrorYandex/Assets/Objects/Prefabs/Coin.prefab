@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5062193439345667228}
   - component: {fileID: 8209883491103269689}
   - component: {fileID: 6200237055304079347}
-  - component: {fileID: 16533686075657326}
+  - component: {fileID: 8401091416031638668}
   - component: {fileID: -2885574393000080041}
   m_Layer: 0
   m_Name: Coin
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &16533686075657326
-MeshCollider:
+--- !u!136 &8401091416031638668
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,10 +95,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -386731530326178724, guid: 05d0ceed6b998d4468f5af89e341a839, type: 3}
+  m_Radius: 0.009878352
+  m_Height: 0.01975671
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.0000000041909525, z: 0}
 --- !u!114 &-2885574393000080041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   seeThroughBorderColor: {r: 0, g: 0, b: 0, a: 1}
   seeThroughBorderWidth: 0.45
   seeThroughOrdered: 1
-  rmsCount: 0
+  rmsCount: 1
   hitFxInitialIntensity: 0
   hitFxMode: 0
   hitFxFadeOutDuration: 0.25

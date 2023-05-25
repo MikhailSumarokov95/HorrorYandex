@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: e8ca17feafddcec43a7331a40094dda0, type: 2}
+      name: Material.005
+    second: {fileID: 2100000, guid: df8fdee806195e046a04cc0672cafa40, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Battery color
+    second: {fileID: 2800000, guid: a5edfa72f62bb954788aec6e331df01e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

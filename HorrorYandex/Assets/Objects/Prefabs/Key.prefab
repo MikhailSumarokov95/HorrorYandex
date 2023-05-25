@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2630307657348421328}
   - component: {fileID: 1382430768318454133}
   - component: {fileID: 3804299496601546175}
-  - component: {fileID: 2367505234614755582}
+  - component: {fileID: 602809577066800413}
   - component: {fileID: 724919115498843192}
   m_Layer: 0
   m_Name: Key
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2367505234614755582
-MeshCollider:
+--- !u!65 &602809577066800413
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,10 +95,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2800202911256583528, guid: 424fa6c53b3967745bfe255fc8f22551, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.06690849, y: 0.024978733, z: 0.00498305}
+  m_Center: {x: 0.020964883, y: 0, z: 0}
 --- !u!114 &724919115498843192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +219,7 @@ MonoBehaviour:
   seeThroughBorderColor: {r: 0, g: 0, b: 0, a: 1}
   seeThroughBorderWidth: 0.45
   seeThroughOrdered: 1
-  rmsCount: 0
+  rmsCount: 1
   hitFxInitialIntensity: 0
   hitFxMode: 0
   hitFxFadeOutDuration: 0.25

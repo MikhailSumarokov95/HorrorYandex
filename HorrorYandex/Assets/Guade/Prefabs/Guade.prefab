@@ -69,7 +69,7 @@ Transform:
   - {fileID: 1707081903831025977}
   - {fileID: 1707081902895768210}
   - {fileID: 695396550550825936}
-  - {fileID: 4281159257484423589}
+  - {fileID: 244567959326684496}
   - {fileID: 6711436994120686436}
   - {fileID: 7849913212646984106}
   m_Father: {fileID: 0}
@@ -3758,7 +3758,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2466
+  m_VersionIndex: 2469
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3890,7 +3890,7 @@ MonoBehaviour:
   flashlight: {fileID: 0}
   gameManager: {fileID: 0}
   pickUp: {fileID: 0}
-  battery: {fileID: 3468452332709849887}
+  battery: {fileID: 0}
   handTutorialPickUpImage: {fileID: 0}
   handTutorialPickUpText: {fileID: 0}
   pickUpButton: {fileID: 0}
@@ -4151,7 +4151,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1442
+  m_VersionIndex: 1445
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4495,7 +4495,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 10648
+  m_VersionIndex: 10651
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4874,7 +4874,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1445
+  m_VersionIndex: 1448
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5218,7 +5218,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1448
+  m_VersionIndex: 1451
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5562,7 +5562,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1448
+  m_VersionIndex: 1451
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5665,6 +5665,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1707081902633276892}
     m_Modifications:
+    - target: {fileID: 227404221693605322, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 589981753810629019, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
       propertyPath: rmsCount
       value: 1
@@ -5735,14 +5739,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
---- !u!1 &3468452332709849887 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3486187060587981701, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
-  m_PrefabInstance: {fileID: 18867259516862618}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4281159257484423589 stripped
+--- !u!4 &244567959326684496 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4263426729811947839, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
+  m_CorrespondingSourceObject: {fileID: 227404221693605322, guid: 7979413014829ea41a76d4a022ea0348, type: 3}
   m_PrefabInstance: {fileID: 18867259516862618}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2316767257676864078
