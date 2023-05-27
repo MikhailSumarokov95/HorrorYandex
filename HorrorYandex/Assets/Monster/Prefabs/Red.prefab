@@ -594,13 +594,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5789729960726666977}
+  - component: {fileID: 8155350444246149861}
   - component: {fileID: 4904065466926194454}
   - component: {fileID: 2342036184529206080}
   - component: {fileID: 2879137007442526565}
   - component: {fileID: 7708270357229091444}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Enemy
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,6 +624,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8155350444246149861
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786406504937979145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 2d5a62b6ac52d8d4487fdd5781783d99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!136 &4904065466926194454
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -687,7 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibilityDistance: 30
   distanceSearchPointRandomMove: 50
-  distanceToPlayerGameOver: 2
+  distanceToPlayerGameOver: 3
 --- !u!1 &5918780561565025466
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +720,7 @@ GameObject:
   - component: {fileID: 5918780561565025467}
   m_Layer: 0
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: MonsterEyes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

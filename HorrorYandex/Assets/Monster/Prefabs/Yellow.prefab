@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4088703327773621954}
   m_Layer: 0
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: MonsterEyes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,13 +464,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3330302304488395050}
+  - component: {fileID: 2312238424784281244}
   - component: {fileID: 4206469234556653789}
   - component: {fileID: 6840485646701163659}
   - component: {fileID: 2865823433648105485}
   - component: {fileID: 7785714563935408583}
   m_Layer: 0
   m_Name: Yellow
-  m_TagString: Enemy
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,6 +494,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2312238424784281244
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324693341780112066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: bf27ee7a3c1d6bd4daf2c4b75220ee26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!136 &4206469234556653789
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -557,7 +578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibilityDistance: 30
   distanceSearchPointRandomMove: 50
-  distanceToPlayerGameOver: 2
+  distanceToPlayerGameOver: 3
 --- !u!1 &3939441966791564818
 GameObject:
   m_ObjectHideFlags: 0

@@ -140,13 +140,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055027515738531252}
+  - component: {fileID: -5860195642067592903}
   - component: {fileID: 1942116702790771779}
   - component: {fileID: 9114688433089822741}
   - component: {fileID: 6978659997631139146}
   - component: {fileID: 401633341764123123}
   m_Layer: 0
   m_Name: Orange
-  m_TagString: Enemy
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,6 +170,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &-5860195642067592903
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058353987599812188}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1ff3300865827d442a672a486b88284a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!136 &1942116702790771779
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -233,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibilityDistance: 30
   distanceSearchPointRandomMove: 50
-  distanceToPlayerGameOver: 2
+  distanceToPlayerGameOver: 3
 --- !u!1 &1471936388635357170
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +298,7 @@ GameObject:
   - component: {fileID: 1635018285514076796}
   m_Layer: 0
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: MonsterEyes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

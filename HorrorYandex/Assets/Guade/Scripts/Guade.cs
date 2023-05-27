@@ -78,7 +78,7 @@ public class Guade : MonoBehaviour
         if (gameManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(false);
 
         head.transform.localRotation = Quaternion.identity;
-        player.isLocked = true;
+        player.IsLocked = true;
         monster.SetActive(true);
         var monsterPosition = head.transform.position - head.transform.transform.forward * 3 + new Vector3(0, -1.8f, 0);
         var monsterRotation = player.transform.rotation * monster.transform.rotation;
@@ -94,7 +94,7 @@ public class Guade : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        player.isLocked = false;
+        player.IsLocked = false;
 
         PlayerPrefs.SetInt("guade", 1);
         FindObjectOfType<GameManager>().StartMenu();

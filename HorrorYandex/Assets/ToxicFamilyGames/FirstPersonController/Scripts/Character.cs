@@ -14,7 +14,7 @@ namespace ToxicFamilyGames.FirstPersonController
 
         public bool IsBrokenNeck { get; set; }
 
-        public bool isLocked;
+        public bool IsLocked;
         [SerializeField]
         private float movementSpeed = 10;
         [SerializeField]
@@ -50,14 +50,14 @@ namespace ToxicFamilyGames.FirstPersonController
 
         private void OnEnable()
         {
-            isLocked = false;
+            IsLocked = false;
         }
 
         private void Update()
         {
             if (IsBrokenNeck) StartCoroutine(NeckTwist());
             if (gameManager.IsPause) return;
-            if (isLocked) return;
+            if (IsLocked) return;
             CameraUpdate();
             characterController.SimpleMove(transform.rotation * Move * movementSpeed);
             if (!gameManager.IsMobile) 
@@ -78,28 +78,27 @@ namespace ToxicFamilyGames.FirstPersonController
         public void MoveHead(Vector2 mouse)
         {
             var directionMove = mouse * generalSetting.TurningSpeed;
-
             moveHeadX += directionMove.y;
             moveHeadX = Mathf.Clamp(moveHeadX, maxDownHead, maxUpHead);
             head.transform.localEulerAngles = new Vector3(-moveHeadX, head.transform.localEulerAngles.y, 0);
-
             transform.Rotate(Vector3.up, directionMove.x);
         }
 
         public IEnumerator NeckTwist()
         {
             IsBrokenNeck = false;
-            var monsterTr = GameObject.FindGameObjectWithTag("Monster").transform;
+            var monsterTr = GameObject.FindGameObjectWithTag("MonsterEyes").transform;
+            print(monsterTr.gameObject.name + monsterTr.parent.name);
             Quaternion rotationForLookAnMonster;
-            isLocked = true;
+            IsLocked = true;
             while (true)
             {
-                rotationForLookAnMonster = Quaternion.LookRotation(monsterTr.forward + monsterTr.up * 0.3f);
+                rotationForLookAnMonster = Quaternion.LookRotation(-monsterTr.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotationForLookAnMonster, 0.1f);
                 if (Mathf.Abs(transform.rotation.eulerAngles.y - rotationForLookAnMonster.eulerAngles.y) < 1f) break;
                 yield return null;
             }
-            isLocked = false;
+            IsLocked = false;
             yield break;
         }
     }

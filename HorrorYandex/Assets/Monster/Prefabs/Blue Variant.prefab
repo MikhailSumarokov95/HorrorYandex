@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1109240648887654265, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1112638463376995473, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -67,9 +71,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6277591852369117796, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4103428297256449298, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
     - {fileID: 6788108700863029470, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
     - {fileID: 9198945220202352944, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
     - {fileID: 1956567747167810918, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
+    - {fileID: -8516305487830101087, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88688f66356c18f49902652bb5bef3fb, type: 3}

@@ -13,6 +13,8 @@ TagManager:
   - Reward
   - Ads
   - NumberFoundKeys
+  - Enemy
+  - MonsterEyes
   layers:
   - Default
   - TransparentFX
