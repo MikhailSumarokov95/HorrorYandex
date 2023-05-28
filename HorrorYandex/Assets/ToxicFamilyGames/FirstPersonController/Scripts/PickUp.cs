@@ -8,7 +8,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private float distanceSearchObject;
     [SerializeField] private GameObject pickUpButton;
     [SerializeField] private TMP_Text pickUpText;
-    [SerializeField] private Flashlight flashlight;
+    [SerializeField] private VideoCamera videoCamera;
     [SerializeField] private Coins coins;
     private GameObject searchedObject;
     Reward reward;
@@ -48,7 +48,7 @@ public class PickUp : MonoBehaviour
         else if (hit.collider.CompareTag("Batteries"))
         {
             searchedObject = hit.collider.gameObject;
-            reward = flashlight.SetFullCharge;
+            reward = videoCamera.SetFullCharge;
             ShowPlayerTheyCanTakeItem(true, searchedObject);
         }
         else if (hit.collider.CompareTag("Coin"))

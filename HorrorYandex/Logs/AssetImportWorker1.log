@@ -449,3 +449,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 825420.985046 seconds.
+  path: Assets/Monster/Animations/Orange.overrideController
+  artifactKey: Guid(1ff3300865827d442a672a486b88284a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Monster/Animations/Orange.overrideController using Guid(1ff3300865827d442a672a486b88284a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '919bdb031e09adaeda261f69a306a092') in 0.045554 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

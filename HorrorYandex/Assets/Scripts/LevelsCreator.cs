@@ -43,6 +43,7 @@ public class LevelsCreator : MonoBehaviour
     public void CreateGuideLevel()
     {
         menuRoom.SetActive(false);
+        player.SetActive(true);
         if (FindObjectOfType<GameManager>().IsMobile)
         {
             guideMobile.SetActive(true);
@@ -53,8 +54,6 @@ public class LevelsCreator : MonoBehaviour
             guidePC.SetActive(true);
             _currentLevel = guidePC;
         }
-
-        player.SetActive(true);
         var guide = _currentLevel.GetComponent<Guade>();
         player.transform.SetPositionAndRotation(guide.PointSpawnPlayer.position, guide.PointSpawnPlayer.rotation);
     }

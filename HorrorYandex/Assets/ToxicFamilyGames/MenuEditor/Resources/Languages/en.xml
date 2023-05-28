@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<text>
+<texts>
 	<text id="survivalModeText">Survival Mode</text>
 	<text id="batteriesFindText">Find the batteries!</text>
 	<text id="batteriesText">batteries are running low</text>
@@ -28,16 +28,12 @@
 	<text id="MusicVolumeText">Music Volume</text>
 	<text id="headerWinGame">win</text>
 	<text id="returnText">back</text>
-	<text id="PcForEyesButtonText">oops... you seem to be sleepy, press Space to keep your eyes open, then press again to relax your eyes</text>
 	<text id="PcPickUpText">Press "E" to pick up</text>
-	<text id="PcFlashlightButtonText">how dark... press "F" to turn on the flashlight!</text>
-	<text id="energyLevelAds">you can also watch an ad to restore energy, to do this, click on the energy drink, or on the eye when the energy is over</text>
-	<text id="batteriesAds">you can also watch ads to restore and change batteries, to do this, click on the battery, or on the flashlight when the charge is over</text>
-	<text id="pcEnergyLevelAds">you can also watch an ad to restore energy, to do this, press the eye open key (space by default) when the energy is over</text>
-	<text id="pcBatteriesAds">you can also watch an ad to change the batteries by pressing the flashlight button (default "F") when the charge is over</text>
-	<text id="pcAdsEnergy">Press the spacebar to view an ad for energy recovery</text>
-	<text id="pcAdsBattery">Press "F" to watch ads for changing flashlight batteries</text>
-	<text id="mobileAdsEnergy">Click on the energy or eye icon to view an ad for energy recovery</text>
-	<text id="mobileAdsBattery">Click on the battery or flashlight icon to view ads for changing flashlight batteries</text>
-	<text id="endlessFlashlight">Infinite flashlight for 19 JAN</text>
-</text>
+	<text id="PcFlashlightButtonText">how dark...press "F" to turn on the camera!</text>
+	<text id="batteriesAds">you can also watch an ad to restore and change batteries, to do this, click on the battery, or on the camera when the charge is over</text>
+	<text id="pcBatteriesAds">you can also watch an ad to change batteries by pressing the camera power button (default "F") when the battery runs out</text>
+	<text id="pcAdsBattery">Press "F" to watch ads for changing batteries in your camera</text>
+	<text id="mobileAdsBattery">Click on the battery or camera icon to view an ad to change your camera batteries</text>
+	<text id="endlessFlashlight">Endless batteries for 19 JAN</text>
+	<text id="VideoCameraButtonText">how dark... turn on the camera!</text>
+</texts>
