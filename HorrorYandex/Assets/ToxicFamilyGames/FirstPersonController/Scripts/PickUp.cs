@@ -36,6 +36,7 @@ public class PickUp : MonoBehaviour
 
     private void SearchObject()
     {
+       
         RaycastHit hit;
         var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (!Physics.Raycast(ray, out hit, distanceSearchObject))
@@ -70,6 +71,7 @@ public class PickUp : MonoBehaviour
             searchedObject = null;
             reward = null;
         }
+        print(hit.collider.tag + hit.collider.name);
     }
 
     private void ShowPlayerTheyCanTakeItem(bool value, GameObject searchedObject)

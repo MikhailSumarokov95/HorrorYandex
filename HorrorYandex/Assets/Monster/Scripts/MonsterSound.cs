@@ -6,6 +6,7 @@ public class MonsterSound : MonoBehaviour
     [SerializeField] private AudioSource neckTwistSound;
     private Monster _monster;
     private BackRoundMusic _backRoundMusic;
+    private Transform _cameraTr;
 
     private void Start()
     {
@@ -14,11 +15,12 @@ public class MonsterSound : MonoBehaviour
 
     private void OnEnable()
     {
+        _cameraTr = Camera.main.transform;
         _backRoundMusic = FindObjectOfType<BackRoundMusic>();
         SetPlayingMonsterSeesThePlayerSound(false);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_monster.IsGameOver) return;
         SearchPlayer();
@@ -36,7 +38,7 @@ public class MonsterSound : MonoBehaviour
     { 
         RaycastHit hit;
         if (Physics.Raycast(transform.position,
-            Camera.main.transform.position - Camera.main.transform.up * 0.9f - transform.position, out hit))
+            _cameraTr.position - _cameraTr.up * 0.9f - transform.position, out hit))
         {
             if (hit.collider.CompareTag("Player")) SetPlayingMonsterSeesThePlayerSound(true);
             else SetPlayingMonsterSeesThePlayerSound(false);

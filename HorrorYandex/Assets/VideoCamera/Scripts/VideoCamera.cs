@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
     [SerializeField] private Image isDischargedImage;
     [SerializeField] private Image isNotDischargedImage;
     [SerializeField] private Slider batteryChargeSlider;
+    [SerializeField] private TMP_Text pcFlashlightButtonText;
     private bool isOnFlashlight = true;
     private float batteryCharge = 1f;
     private float maxIntensityLight;
@@ -76,6 +78,7 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
         isOffFlashlightButton.gameObject.SetActive(!value);
         if (value) animator.SetTrigger("On");
         else animator.SetTrigger("Off");
+        if (!gameManager.IsMobile) pcFlashlightButtonText.gameObject.SetActive(!value);
     }
 
     private void DischargingBattery()
