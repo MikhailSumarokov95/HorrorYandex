@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ToxicFamilyGames.FirstPersonController
@@ -87,15 +88,14 @@ namespace ToxicFamilyGames.FirstPersonController
         public IEnumerator NeckTwist()
         {
             IsBrokenNeck = false;
-            var monsterTr = GameObject.FindGameObjectWithTag("MonsterEyes").transform;
-            print(monsterTr.gameObject.name + monsterTr.parent.name);
+            var monsterTr = GameObject.FindGameObjectWithTag("Monster").transform;
             Quaternion rotationForLookAnMonster;
             IsLocked = true;
             while (true)
             {
-                rotationForLookAnMonster = Quaternion.LookRotation(-monsterTr.position);
+                rotationForLookAnMonster = Quaternion.LookRotation(monsterTr.forward) * Quaternion.Euler(0,180,0);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotationForLookAnMonster, 0.1f);
-                if (Mathf.Abs(transform.rotation.eulerAngles.y - rotationForLookAnMonster.eulerAngles.y) < 1f) break;
+                if (Mathf.Abs(transform.rotation.eulerAngles.y - rotationForLookAnMonster.eulerAngles.y) < 0.1f) break;
                 yield return null;
             }
             IsLocked = false;

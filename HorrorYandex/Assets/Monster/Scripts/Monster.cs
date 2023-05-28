@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
 
 public class Monster : MonoBehaviour
 {
@@ -11,11 +10,12 @@ public class Monster : MonoBehaviour
     //public bool IsMonsterVisible { get; private set; }
 
     public float VisibilityDistance { get { return visibilityDistance; } set { visibilityDistance = value; } }
-    [SerializeField] private float angleVisibility = 5f;
+    //[SerializeField] private float angleVisibility = 5f;
     [SerializeField] private float visibilityDistance = 10f;
-    [SerializeField] private float distanceSearchPointRandomMove = 4f;
+    //[SerializeField] private float distanceSearchPointRandomMove = 4f;
     [SerializeField] private float distanceToPlayerGameOver = 0.5f;
-    private float _distanceToPlayer;
+    [SerializeField] private float factorSpeedIsVisibilityPlayer = 1.5f;
+    private float _speedDefault = 1f;
     private NavMeshAgent _monsterNMA;
     //private CapsuleCollider _monsterCollider;
     private Level _level;
@@ -25,6 +25,7 @@ public class Monster : MonoBehaviour
     {
         //_monsterCollider = GetComponent<CapsuleCollider>();
         _monsterNMA = GetComponent<NavMeshAgent>();
+        _speedDefault = _monsterNMA.speed;
         _level = FindObjectOfType<Level>();
         _playerTr = Camera.main.gameObject.transform;
     }
@@ -33,47 +34,37 @@ public class Monster : MonoBehaviour
     {
         if (IsGameOver) return;
         Move();
-        //DetermineVisibility();
-        //if (/*!IsMonsterVisible ||*/ SetMove) Move();
-        //else _monsterNMA.isStopped = true;
-        CheckingMonsterHasCaughtUpWithPlayer();
+        _monsterNMA.speed = IsTargetVisibility() ? _speedDefault * factorSpeedIsVisibilityPlayer : _speedDefault; 
+        if (IsMonsterHasCaughtUpWithPlayer()) NeckTwist();
     }
 
-    private void CheckingMonsterHasCaughtUpWithPlayer()
-    {
-        if (_distanceToPlayer < distanceToPlayerGameOver) NeckTwist();
-    }
-
-    private bool IsTargetVisibility()
-    {
-        var rotationLookAnTarget = Quaternion.LookRotation(_playerTr.position - transform.position);
-        if (Mathf.Abs(transform.rotation.eulerAngles.y - rotationLookAnTarget.eulerAngles.y) < angleVisibility)
-            return true;
-        else return false;
-    }
+    private bool IsMonsterHasCaughtUpWithPlayer() => Vector3.Distance(transform.position, _playerTr.position) < distanceToPlayerGameOver;
 
     private void Move()
     {
         _monsterNMA.isStopped = false;
-        _distanceToPlayer = Mathf.Abs((transform.position - _playerTr.position).magnitude);
-        if (_distanceToPlayer < visibilityDistance || IsTargetVisibility()) MoveToPlayer();
-        else RandomMove();
+        MoveToPlayer();
     }
 
-    private void MoveToPlayer()
+    private void MoveToPlayer() => _monsterNMA.destination = _playerTr.position;
+
+    private bool IsTargetVisibility()
     {
-        _monsterNMA.destination = _playerTr.position;
+        RaycastHit hit;
+        Physics.Raycast(_playerTr.position, transform.position - _playerTr.position, out hit);
+        if (hit.transform.gameObject.CompareTag("Player")) return true;
+        else return false;
     }
 
-    private void RandomMove()
-    {
-        if (_monsterNMA.remainingDistance > 3) return;
-        var targetX = transform.position.x + Random.Range(-distanceSearchPointRandomMove, distanceSearchPointRandomMove);
-        var targetZ = transform.position.z + Random.Range(-distanceSearchPointRandomMove, distanceSearchPointRandomMove);
-        NavMeshHit hit;
-        NavMesh.SamplePosition(new Vector3(targetX, 0, targetZ), out hit, 3, NavMesh.AllAreas);
-        _monsterNMA.destination = hit.position;
-    }
+    //private void RandomMove()
+    //{
+    //    if (_monsterNMA.remainingDistance > 3) return;
+    //    var targetX = transform.position.x + Random.Range(-distanceSearchPointRandomMove, distanceSearchPointRandomMove);
+    //    var targetZ = transform.position.z + Random.Range(-distanceSearchPointRandomMove, distanceSearchPointRandomMove);
+    //    NavMeshHit hit;
+    //    NavMesh.SamplePosition(new Vector3(targetX, 0, targetZ), out hit, 3, NavMesh.AllAreas);
+    //    _monsterNMA.destination = hit.position;
+    //}
 
     //private void DetermineVisibility()
     //{
