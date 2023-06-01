@@ -9,22 +9,21 @@ public class PickUp : MonoBehaviour
     [SerializeField] private GameObject pickUpButton;
     [SerializeField] private TMP_Text pickUpText;
     [SerializeField] private VideoCamera videoCamera;
-    [SerializeField] private Coins coins;
     private GameObject searchedObject;
     Reward reward;
     private EscapeMode escapeMode;
-    private GameManager gameManager;
+    //private int maskTarget;
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
         pickUpButton.SetActive(false);
+        //maskTarget = LayerMask.NameToLayer("Player");
     }
 
     private void Update()
     {
         SearchObject();
-        if (!gameManager.IsMobile && GameInput.Key.GetKeyDown("PickUp")) PickUpObject();
+        if (!PlatformManager.IsMobile && GameInput.Key.GetKeyDown("PickUp")) PickUpObject();
     }
 
     public void PickUpObject()
@@ -35,8 +34,7 @@ public class PickUp : MonoBehaviour
     }
 
     private void SearchObject()
-    {
-       
+    { 
         RaycastHit hit;
         var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (!Physics.Raycast(ray, out hit, distanceSearchObject))
@@ -52,12 +50,6 @@ public class PickUp : MonoBehaviour
             reward = videoCamera.SetFullCharge;
             ShowPlayerTheyCanTakeItem(true, searchedObject);
         }
-        else if (hit.collider.CompareTag("Coin"))
-        {
-            searchedObject = hit.collider.gameObject;
-            reward = coins.PickUpCoin;
-            ShowPlayerTheyCanTakeItem(true, searchedObject);
-        }
         else if (hit.collider.CompareTag("Key"))
         {
             if (escapeMode == null) escapeMode = FindObjectOfType<EscapeMode>();
@@ -71,7 +63,6 @@ public class PickUp : MonoBehaviour
             searchedObject = null;
             reward = null;
         }
-        print(hit.collider.tag + hit.collider.name);
     }
 
     private void ShowPlayerTheyCanTakeItem(bool value, GameObject searchedObject)
@@ -81,7 +72,7 @@ public class PickUp : MonoBehaviour
             searchedObject.GetComponent<HighlightEffect>().SetHighlighted(value);
         }
         catch { }
-        if (gameManager.IsMobile) pickUpButton.SetActive(value);
+        if (PlatformManager.IsMobile) pickUpButton.SetActive(value);
         else pickUpText.gameObject.SetActive(value);
         OnSearchedObject = value;
     }

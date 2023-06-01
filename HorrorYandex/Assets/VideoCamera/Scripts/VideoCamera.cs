@@ -16,15 +16,8 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
     private bool isOnFlashlight = true;
     private float batteryCharge = 1f;
     private float maxIntensityLight;
-    private GameManager gameManager;
     private Animator animator;
-
-    public bool IsEndless { get; set; }
-
-    private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
+    private bool _isEndless;
 
     private void Start()
     {
@@ -36,8 +29,9 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
         animator = GetComponent<Animator>();
         SetFullCharge();
         isDischargedImage.transform.parent.gameObject.SetActive(true);
-        isOnFlashlightButton.transform.parent.gameObject.SetActive(gameManager.IsMobile);
+        isOnFlashlightButton.transform.parent.gameObject.SetActive(PlatformManager.IsMobile);
         SetActiveFlashlight(true);
+        _isEndless = StorageManager.IsBoughtCamera();
     }
 
     public void OnDisable()
@@ -53,9 +47,9 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
             if (GameInput.Key.GetKeyDown("OnFlashlight")) GSConnect.ShowRewardedAd(this);
             return;
         }
-        if (!gameManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight"))
+        if (!PlatformManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight"))
             SetActiveFlashlight(!spotLight.gameObject.activeInHierarchy);
-        if (isOnFlashlight && !IsEndless) DischargingBattery();
+        if (isOnFlashlight && !_isEndless) DischargingBattery();
     }
 
     public void RewardPerPurchase() => SetFullCharge();
@@ -78,7 +72,13 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
         isOffFlashlightButton.gameObject.SetActive(!value);
         if (value) animator.SetTrigger("On");
         else animator.SetTrigger("Off");
-        if (!gameManager.IsMobile) pcFlashlightButtonText.gameObject.SetActive(!value);
+        if (PlatformManager.IsMobile) pcFlashlightButtonText.gameObject.SetActive(!value);
+    }
+
+    public void SetEndless()
+    {
+        _isEndless = true;
+        SetFullCharge();
     }
 
     private void DischargingBattery()

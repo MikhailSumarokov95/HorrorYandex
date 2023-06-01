@@ -415,9 +415,9 @@ Canvas:
   m_GameObject: {fileID: 583971509}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -864,7 +864,6 @@ MonoBehaviour:
   maxDownHead: -50
   joystick: {fileID: 0}
   touchSystem: {fileID: 0}
-  gameManager: {fileID: 0}
   generalSetting: {fileID: 0}
   head: {fileID: 2240953499094037597}
 --- !u!114 &1570061319
@@ -883,7 +882,6 @@ MonoBehaviour:
   pickUpButton: {fileID: 0}
   pickUpText: {fileID: 0}
   videoCamera: {fileID: 378757707}
-  coins: {fileID: 0}
 --- !u!136 &7660788167717630294
 CapsuleCollider:
   m_ObjectHideFlags: 0

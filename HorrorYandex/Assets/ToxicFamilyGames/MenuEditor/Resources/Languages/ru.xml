@@ -36,4 +36,6 @@
   <text id="mobileAdsBattery">Нажми на значок батарейки или камеры, чтобы посмотреть рекламу для замены батареек в камере</text>
   <text id="endlessFlashlight">Бесконечные батарейки за 19 ЯН</text>
   <text id="VideoCameraButtonText">какая темнота... включи камеру!</text>
+  <text id="settingText">Настройки</text>
+  <text id="levelsText">Уровни</text>
 </texts>

@@ -3,49 +3,42 @@ using TMPro;
 
 public class SurvivalMode : Level
 {
-    public float Timer 
-    { 
-        get 
-        { 
-            return _timer; 
-        } 
-        private set 
-        {
-            _timer = value;
-            _timerText.text = _timer.ToString("F0"); 
-        } 
-    }
-
+    [Header("Object")]
     [SerializeField] private GameObject battery;
     [SerializeField] private int amountBattery = 3;
+    [Header("Timer")]
     [SerializeField] private int[] timerTimeDependingOnTheLevelNumber;
+    [SerializeField] private TMP_Text _timerText;
     private float _timer;
-    private TMP_Text _timerText;
-    private GameObject _timerGO;
 
-    private void Start()
+    public float Timer
     {
-        base.Start();
-        _timerGO = GameObject.FindGameObjectWithTag("TimerSurvivalMode");
-        SetActivateChildTransform(_timerGO.transform, true);
-        _timerText = _timerGO.transform.GetChild(0).GetComponent<TMP_Text>();
-        _timerText.text = "0";
-        Timer = timerTimeDependingOnTheLevelNumber[NumberLevel];
-        _map.CreateRandomObjectsOnLevel(battery, amountBattery);
+        get
+        {
+            return _timer;
+        }
+        private set
+        {
+            _timer = value;
+            _timerText.text = _timer.ToString("F0");
+        }
     }
 
-    private void OnDestroy()
+    protected override void Start()
     {
-        SetActivateChildTransform(_timerGO.transform, false);
+        base.Start();
+        _timerText.text = "0";
+        Timer = timerTimeDependingOnTheLevelNumber[levelType.Number];
+        FindObjectOfType<SpawnManager>().CreateRandomObjectsOnLevel(battery, amountBattery);
     }
 
     private void Update()
     {
-        if (IsGameOver) return;
+        if (_isGameOver) return;
         if (Timer < 0)
         {
             WinLevel();
-            IsGameOver = true;
+            _isGameOver = true;
         }
         Timer -= Time.deltaTime;
     }

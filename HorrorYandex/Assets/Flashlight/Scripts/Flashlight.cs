@@ -13,26 +13,20 @@ public class Flashlight : MonoBehaviour, IGSPurchase
     [SerializeField] private Slider batteryChargeSlider;
     private bool isOnFlashlight = true;
     private float batteryCharge = 1f;
-    private float maxIntesityLight;
-    private GameManager gameManager;
+    private float maxIntensityLight;
 
     public bool IsEndless { get; set; }
 
-    private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-
     private void Start()
     {
-        maxIntesityLight = spotLight.intensity;
+        maxIntensityLight = spotLight.intensity;
     }
 
     private void OnEnable()
     {
         SetFullCharge();
         isDischargedImage.transform.parent.gameObject.SetActive(true);
-        isOnFlashlightButton.transform.parent.gameObject.SetActive(gameManager.IsMobile);
+        isOnFlashlightButton.transform.parent.gameObject.SetActive(PlatformManager.IsMobile);
         SetActiveFlashlight(true);
     }
 
@@ -49,7 +43,7 @@ public class Flashlight : MonoBehaviour, IGSPurchase
             if (GameInput.Key.GetKeyDown("OnFlashlight")) GSConnect.ShowRewardedAd(this);
             return;
         }
-        if (!gameManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight")) 
+        if (!PlatformManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight")) 
             SetActiveFlashlight(!spotLight.gameObject.activeInHierarchy);
         if (isOnFlashlight && !IsEndless) DischargingBattery();
     }
@@ -77,7 +71,7 @@ public class Flashlight : MonoBehaviour, IGSPurchase
     private void DischargingBattery() 
     {
         batteryCharge -= Time.deltaTime * dischargingFactor;
-        spotLight.intensity = maxIntesityLight * batteryCharge;
+        spotLight.intensity = maxIntensityLight * batteryCharge;
         batteryChargeSlider.value = batteryCharge;
     }
 

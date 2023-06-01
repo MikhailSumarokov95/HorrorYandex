@@ -3,28 +3,22 @@ using TMPro;
 
 public class EscapeMode : Level
 {
+    [Header("Object")]
     [SerializeField] private GameObject battery;
     [SerializeField] private int amountBattery = 3;
     [SerializeField] private GameObject key;
+    [Header("Keys")]
     [SerializeField] private int[] numberOfKeysToWinDependingOnTheLevelNumber;
+    [SerializeField] private TMP_Text _numberFoundKeysText;
     private int _numberFoundKeys;
-    private GameObject _numberFoundKeysGO;
-    private TMP_Text _numberFoundKeysText;
 
-    private void Start()
+    protected override void Start()
     {
         base.Start();
-        _numberFoundKeysGO = GameObject.FindGameObjectWithTag("NumberFoundKeys");
-        SetActivateChildTransform(_numberFoundKeysGO.transform, true);
-        _numberFoundKeysText = _numberFoundKeysGO.transform.GetChild(0).GetComponent<TMP_Text>();
         SetTextNumberFoundKeys(0);
-        _map.CreateRandomObjectsOnLevel(key, numberOfKeysToWinDependingOnTheLevelNumber[_difficultyLevelNumber]);
-        _map.CreateRandomObjectsOnLevel(battery, amountBattery);
-    }
-
-    private void OnDestroy()
-    {
-        SetActivateChildTransform(_numberFoundKeysGO.transform, false);
+        var spawner = FindObjectOfType<SpawnManager>();
+        spawner.CreateRandomObjectsOnLevel(key, numberOfKeysToWinDependingOnTheLevelNumber[_difficultyLevelNumber]);
+        spawner.CreateRandomObjectsOnLevel(battery, amountBattery);
     }
 
     [ContextMenu("PickUpKey")]

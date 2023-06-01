@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ToxicFamilyGames.FirstPersonController
@@ -7,9 +6,9 @@ namespace ToxicFamilyGames.FirstPersonController
     [RequireComponent(typeof(CharacterController))]
     public class Character : MonoBehaviour
     {
-        public float MoveHorizontal { get { return gameManager.IsMobile ? joystick.Horizontal : Input.GetAxis("Horizontal"); } }
+        public float MoveHorizontal { get { return PlatformManager.IsMobile ? joystick.Horizontal : Input.GetAxis("Horizontal"); } }
 
-        public float MoveVertical { get { return gameManager.IsMobile ? joystick.Vertical : Input.GetAxis("Vertical"); } }
+        public float MoveVertical { get { return PlatformManager.IsMobile ? joystick.Vertical : Input.GetAxis("Vertical"); } }
 
         public Vector3 Move { get { return new Vector3(MoveHorizontal, 0, MoveVertical); } }
 
@@ -27,8 +26,6 @@ namespace ToxicFamilyGames.FirstPersonController
         [SerializeField]
         private TouchSystem touchSystem;
         [SerializeField]
-        private GameManager gameManager;
-        [SerializeField]
         private GeneralSetting generalSetting;
         [SerializeField]
         private GameObject head;
@@ -41,7 +38,7 @@ namespace ToxicFamilyGames.FirstPersonController
         {
             animator = GetComponent<Animator>();
             characterController = GetComponent<CharacterController>();
-            if (!gameManager.IsMobile)
+            if (!PlatformManager.IsMobile)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 joystick.gameObject.SetActive(false);
@@ -57,11 +54,11 @@ namespace ToxicFamilyGames.FirstPersonController
         private void Update()
         {
             if (IsBrokenNeck) StartCoroutine(NeckTwist());
-            if (gameManager.IsPause) return;
+            if (GameManager.IsPause) return;
             if (IsLocked) return;
             CameraUpdate();
             characterController.SimpleMove(transform.rotation * Move * movementSpeed);
-            if (!gameManager.IsMobile) 
+            if (!PlatformManager.IsMobile) 
                 MoveHead(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * Time.deltaTime);
         }
 

@@ -3,42 +3,30 @@ using ToxicFamilyGames.FirstPersonController;
 
 public class Level : MonoBehaviour
 {
-    public int NumberLevel { get; set; }
-    [SerializeField] private int numberTopCalculatedDifficultyLevel;
-    [SerializeField] private float[] VisibilityDistanceMonsterDependingOnTheLevelNumber;
-    public bool IsGameOver;
+    [SerializeField] protected LevelParameters levelType;
     private BackRoundMusic _backRoundMusic;
-    protected Map _map;
     protected int _difficultyLevelNumber;
+    protected bool _isGameOver;
 
-    protected void Start()
+    protected virtual void Start()
     {
-        _difficultyLevelNumber = _difficultyLevelNumber = NumberLevel - numberTopCalculatedDifficultyLevel;
-        _map = FindObjectOfType<Map>();
         _backRoundMusic = FindObjectOfType<BackRoundMusic>();
-        SetToMonstersVisibilityDistance();
     }
 
     public void WinLevel()
     {
-        FindObjectOfType<LevelsProgress>().OpenLevel(NumberLevel + 1);
+        FindObjectOfType<LevelsProgress>().OpenLevel(levelType);
         FindObjectOfType<GameManager>().OnWin();
         _backRoundMusic.IsPause = true;
     }
 
     public void LossLevel()
     {
-        if (IsGameOver) return;
-        IsGameOver = true;
+        if (_isGameOver) return;
+        _isGameOver = true;
         FindObjectOfType<GameManager>().OnLoss();
         FindObjectOfType<Character>().IsBrokenNeck = true;
         _backRoundMusic.IsPause = true;
-    }
-
-    public void SetToMonstersVisibilityDistance()
-    {
-        FindObjectOfType<Monster>().VisibilityDistance = 
-            VisibilityDistanceMonsterDependingOnTheLevelNumber[NumberLevel - numberTopCalculatedDifficultyLevel];
     }
 
     protected void SetActivateChildTransform(Transform transform, bool value)

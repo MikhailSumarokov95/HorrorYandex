@@ -4,14 +4,8 @@ public class MonsterSound : MonoBehaviour
 {
     [SerializeField] private AudioSource theMonsterSeesThePlayerSound;
     [SerializeField] private AudioSource neckTwistSound;
-    private Monster _monster;
     private BackRoundMusic _backRoundMusic;
     private Transform _cameraTr;
-
-    private void Start()
-    {
-        _monster = GetComponent<Monster>();
-    }
 
     private void OnEnable()
     {
@@ -22,7 +16,7 @@ public class MonsterSound : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_monster.IsGameOver) return;
+        if (GameManager.IsPause) return;
         SearchPlayer();
     }
 

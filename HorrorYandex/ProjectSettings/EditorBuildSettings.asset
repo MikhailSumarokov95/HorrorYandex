@@ -9,6 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/GSLoader.unity
     guid: c6b34036829f77346a96627a9802bc44
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Menu.unity
+    guid: 02fb704b219a77848a14ae57a602b01a
+  - enabled: 1
+    path: Assets/Scenes/Guide.unity
+    guid: 2afeb7832d5270f46b15cb46a127f072
+  - enabled: 1
+    path: Assets/Scenes/SurvivalLevel0.unity
+    guid: 066ca32b4befb3a43ace311358ce14f4
+  - enabled: 1
+    path: Assets/Scenes/SurvivalLevel1.unity
+    guid: 2b739be7f56914d44ac146578776422e
+  - enabled: 1
+    path: Assets/Scenes/SurvivalLevel2.unity
+    guid: 6828f1a6edae5574889092573eb5d1fa
+  - enabled: 1
+    path: Assets/Scenes/SurvivalLevel3.unity
+    guid: 16d10a4f30e55714c960163261392b4c
+  - enabled: 1
+    path: Assets/Scenes/EscapeLevel0.unity
+    guid: dd53f9472ac847d4894cf10b8f0f5cf2
+  - enabled: 1
+    path: Assets/Scenes/EscapeLevel1.unity
+    guid: da76a0b7203bb5a4f91e809cf4cd0031
+  - enabled: 1
+    path: Assets/Scenes/EscapeLevel2.unity
+    guid: 6cee48e240e8d9b4eafbee170f00b8bd
+  - enabled: 1
+    path: Assets/Scenes/EscapeLevel3.unity
+    guid: 6091bc7b3d8a5f24c9c241674f869de8
   m_configObjects: {}
