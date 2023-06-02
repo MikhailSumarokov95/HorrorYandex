@@ -34,6 +34,8 @@
 	<text id="pcBatteriesAds">you can also watch an ad to change batteries by pressing the camera power button (default "F") when the battery runs out</text>
 	<text id="pcAdsBattery">Press "F" to watch ads for changing batteries in your camera</text>
 	<text id="mobileAdsBattery">Click on the battery or camera icon to view an ad to change your camera batteries</text>
-	<text id="endlessFlashlight">Endless batteries for 19 JAN</text>
+	<text id="endlessFlashlight">Endless batteries for 19 YAN</text>
 	<text id="VideoCameraButtonText">how dark... turn on the camera!</text>
+	<text id="settingText">Settings</text>
+	<text id="levelsText">Levels</text>
 </texts>

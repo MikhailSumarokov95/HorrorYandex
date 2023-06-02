@@ -3,26 +3,26 @@ using UnityEngine;
 
 public class BackRoundMusic : MonoBehaviour
 {
+    [SerializeField] private AudioSource[] backGroundMusic;
+    private GameObject _backGroundPlaying;
+    private AudioSource _backGroundPlayingAS;
+    private int _numberBackgroundPlaying;
+
     private bool _isPause;
-    public bool IsPause 
-    { 
-        get 
-        { 
+    public bool IsPause
+    {
+        get
+        {
             return _isPause;
-        } 
-        set 
+        }
+        set
         {
             if (value == _isPause) return;
             if (value) _backGroundPlayingAS.Pause();
             else _backGroundPlayingAS.Play();
             _isPause = value;
-        } 
+        }
     }
-
-    [SerializeField] private AudioSource[] backGroundMusic;
-    private GameObject _backGroundPlaying;
-    private AudioSource _backGroundPlayingAS;
-    private int _numberBackgroundPlaying;
 
     private void Start()
     {

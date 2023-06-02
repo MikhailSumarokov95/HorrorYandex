@@ -13,24 +13,23 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
     [SerializeField] private Image isNotDischargedImage;
     [SerializeField] private Slider batteryChargeSlider;
     [SerializeField] private TMP_Text pcFlashlightButtonText;
-    private bool isOnFlashlight = true;
-    private float batteryCharge = 1f;
-    private float maxIntensityLight;
-    private Animator animator;
+    private bool _isOnFlashlight = true;
+    private float _batteryCharge = 1f;
+    private float _maxIntensityLight;
+    private Animator _animator;
     private bool _isEndless;
 
-    private void Start()
+    private void Awake()
     {
-        maxIntensityLight = spotLight.intensity;
+        _maxIntensityLight = spotLight.intensity;
     }
 
     private void OnEnable()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         SetFullCharge();
         isDischargedImage.transform.parent.gameObject.SetActive(true);
         isOnFlashlightButton.transform.parent.gameObject.SetActive(PlatformManager.IsMobile);
-        SetActiveFlashlight(true);
         _isEndless = StorageManager.IsBoughtCamera();
     }
 
@@ -48,31 +47,34 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
             return;
         }
         if (!PlatformManager.IsMobile && GameInput.Key.GetKeyDown("OnFlashlight"))
-            SetActiveFlashlight(!spotLight.gameObject.activeInHierarchy);
-        if (isOnFlashlight && !_isEndless) DischargingBattery();
+            SetActive(!spotLight.gameObject.activeInHierarchy);
+        if (_isOnFlashlight && !_isEndless) DischargingBattery();
     }
 
     public void RewardPerPurchase() => SetFullCharge();
 
+    public void TryRewardAd() => GSConnect.ShowRewardedAd(this);
+
     public void SetFullCharge()
     {
-        batteryCharge = 1f;
-        batteryChargeSlider.value = batteryCharge;
+        _batteryCharge = 1f;
+        batteryChargeSlider.value = _batteryCharge;
+        spotLight.intensity = _maxIntensityLight;
         isDischargedFlashlightButton.gameObject.SetActive(false);
         isDischargedImage.gameObject.SetActive(false);
         isNotDischargedImage.gameObject.SetActive(true);
-        SetActiveFlashlight(true);
+        SetActive(true);
     }
 
-    public void SetActiveFlashlight(bool value)
+    public void SetActive(bool value)
     {
         spotLight.gameObject.SetActive(value);
-        isOnFlashlight = value;
+        _isOnFlashlight = value;
         isOnFlashlightButton.gameObject.SetActive(value);
         isOffFlashlightButton.gameObject.SetActive(!value);
-        if (value) animator.SetTrigger("On");
-        else animator.SetTrigger("Off");
-        if (PlatformManager.IsMobile) pcFlashlightButtonText.gameObject.SetActive(!value);
+        if (value) _animator.SetTrigger("On");
+        else _animator.SetTrigger("Off");
+        if (!PlatformManager.IsMobile) pcFlashlightButtonText.gameObject.SetActive(!value);
     }
 
     public void SetEndless()
@@ -83,14 +85,14 @@ public class VideoCamera : MonoBehaviour, IGSPurchase
 
     private void DischargingBattery()
     {
-        batteryCharge -= Time.deltaTime * dischargingFactor;
-        spotLight.intensity = maxIntensityLight * batteryCharge;
-        batteryChargeSlider.value = batteryCharge;
+        _batteryCharge -= Time.deltaTime * dischargingFactor;
+        spotLight.intensity = _maxIntensityLight * _batteryCharge;
+        batteryChargeSlider.value = _batteryCharge;
     }
 
     private bool BatteryChargeCheck()
     {
-        if (batteryCharge < 0.01f)
+        if (_batteryCharge < 0.01f)
         {
             isDischargedImage.gameObject.SetActive(true);
             isNotDischargedImage.gameObject.SetActive(false);

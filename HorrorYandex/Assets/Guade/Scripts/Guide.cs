@@ -7,48 +7,46 @@ using UnityEngine.SceneManagement;
 
 public class Guide : MonoBehaviour
 {
-    public Transform PointSpawnPlayer;
     [SerializeField] private Button goPauseButton;
     [SerializeField] private VideoCamera videoCamera;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private PickUp pickUp;
     [SerializeField] private GameObject battery;
     [SerializeField] private Image handTutorialPickUpImage;
-    [SerializeField] private TMP_Text handTutorialPickUpText;
-    [SerializeField] private Button pickUpButton;
-    [SerializeField] private TMP_Text flashlightButtonText;
-    [SerializeField] private Image handFlashlightButtonImage;
-    [SerializeField] private Button isOffFlashlightButton;
+    [SerializeField] private TMP_Text videoCameraButtonText;
+    [SerializeField] private Image handVideoCameraButtonImage;
+    [SerializeField] private Button isOffVideoCameraButton;
     [SerializeField] private TMP_Text batteriesText;
     [SerializeField] private TMP_Text batteriesFindText;
-    [SerializeField] private TMP_Text batteriesAdsText;
+    [SerializeField] private TMP_Text batteriesAdsTextMobile;
+    [SerializeField] private TMP_Text batteriesAdsTextPC;
     [SerializeField] private GameObject monster;
     [SerializeField] private Character player;
     [SerializeField] private GameObject head;
 
-    private void OnEnable()
+    private void Awake()
     {
+        FindObjectOfType<GameInput>(true).Awake();
+        FindObjectOfType<GeneralSetting>(true).LoadSettings();
+    }
+
+    private void Start()
+    {
+        if (!PlatformManager.IsMobile) Cursor.lockState = CursorLockMode.Locked;
         goPauseButton.gameObject.SetActive(false);
         StartCoroutine(GuideScenario());
     }
 
-    private void OnDisable()
-    {
-        goPauseButton.gameObject.SetActive(true);
-    }
-
     private IEnumerator GuideScenario()
     {
-        videoCamera.SetActiveFlashlight(false);
+        videoCamera.SetActive(false);
 
-        flashlightButtonText.gameObject.SetActive(true);
-        if (PlatformManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(true);
+        videoCameraButtonText.gameObject.SetActive(true);
+        if (PlatformManager.IsMobile) handVideoCameraButtonImage.gameObject.SetActive(true);
 
-        if (PlatformManager.IsMobile) yield return new WaitForButtonClick(isOffFlashlightButton);
+        if (PlatformManager.IsMobile) yield return new WaitForButtonClick(isOffVideoCameraButton);
         else yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.F));
 
-        flashlightButtonText.gameObject.SetActive(false);
-        if (PlatformManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(false);
+        videoCameraButtonText.gameObject.SetActive(false);
+        if (PlatformManager.IsMobile) handVideoCameraButtonImage.gameObject.SetActive(false);
 
         batteriesText.gameObject.SetActive(true);
         battery.SetActive(true);
@@ -65,13 +63,21 @@ public class Guide : MonoBehaviour
         batteriesFindText.gameObject.SetActive(false);
         batteriesText.gameObject.SetActive(false);
 
-        batteriesAdsText.gameObject.SetActive(true);
-        if (PlatformManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(true);
+        if (PlatformManager.IsMobile)
+        {
+            batteriesAdsTextMobile.gameObject.SetActive(true);
+            handVideoCameraButtonImage.gameObject.SetActive(true);
+        }
+        else batteriesAdsTextPC.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(2f);
 
-        batteriesAdsText.gameObject.SetActive(false);
-        if (PlatformManager.IsMobile) handFlashlightButtonImage.gameObject.SetActive(false);
+        if (PlatformManager.IsMobile)
+        {
+            batteriesAdsTextMobile.gameObject.SetActive(false);
+            handVideoCameraButtonImage.gameObject.SetActive(false);
+        }
+        else batteriesAdsTextPC.gameObject.SetActive(false);
 
         head.transform.localRotation = Quaternion.identity;
         player.IsLocked = true;
@@ -91,6 +97,8 @@ public class Guide : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         player.IsLocked = false;
+
+        StorageManager.SetGuideCompleted();
 
         SceneManager.LoadScene(1);
     }

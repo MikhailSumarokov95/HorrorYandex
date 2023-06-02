@@ -87,10 +87,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e6307ecd70f5c439ebff741ac7c2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsLocked: 0
   movementSpeed: 5
   maxUpHead: 30
-  maxDownHead: -80
+  maxDownHead: -50
+  speedNeckTwist: 4
   joystick: {fileID: 0}
   touchSystem: {fileID: 0}
   generalSetting: {fileID: 0}

@@ -15,8 +15,8 @@ public class MenuManager : MonoBehaviour
     {
         if (!PlatformManager.IsMobile) Cursor.lockState = CursorLockMode.None;
         generalSetting.LoadSettings();
-        //if (!StorageManager.isGuideCompleted())
-        //    StartGuide();
+        if (!StorageManager.IsGuideCompleted())
+            StartGuide();
     }
 
     public void StartGuide() => SceneManager.LoadScene(2);

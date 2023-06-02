@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     private float _speedDefault = 1f;
     private NavMeshAgent _monsterNMA;
     private Transform _playerTr;
+    private bool _isLocked;
     
     private void Start()
     {
@@ -18,6 +19,7 @@ public class Monster : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isLocked) return;
         if (GameManager.IsPause) return;
         Move();
         _monsterNMA.speed = IsTargetVisibility() ? _speedDefault * factorSpeedIsVisibilityPlayer : _speedDefault; 
@@ -44,8 +46,11 @@ public class Monster : MonoBehaviour
 
     private void NeckTwist()
     {
+        _isLocked = true;
+        _monsterNMA.isStopped = true;
         transform.LookAt(_playerTr.position);
         FindObjectOfType<Level>().LossLevel();
         GetComponent<MonsterSound>().PlayNeckTwist();
+        GetComponent<Animator>().SetTrigger("Stop");
     }
 }

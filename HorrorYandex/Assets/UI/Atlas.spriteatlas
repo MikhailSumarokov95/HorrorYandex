@@ -49,22 +49,18 @@ SpriteAtlas:
     - {fileID: 2800000, guid: d98fd4f4fb43567498514ebe3de3686f, type: 3}
     - {fileID: 2800000, guid: 510f11a8a813d144c8b7962327d4d746, type: 3}
     - {fileID: 2800000, guid: 4b5eb8e953d4bdf4095cfa714ff30c62, type: 3}
-    - {fileID: 2800000, guid: bb9e6a92ceb534d4e8257f9aa01e30f1, type: 3}
+    - {fileID: 2800000, guid: b7bc18cac22e22846901513c6a68be7c, type: 3}
     - {fileID: 2800000, guid: 449ebb74b1d561e45803b7898c3706c6, type: 3}
     - {fileID: 2800000, guid: 105035c53dafab3429ab39c236c10235, type: 3}
     - {fileID: 2800000, guid: 431b099d15f37964f9c983505ed41ca0, type: 3}
-    - {fileID: 2800000, guid: b7bc18cac22e22846901513c6a68be7c, type: 3}
-    - {fileID: 2800000, guid: 5bb33246136b45541b512b39061012db, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: bb9e6a92ceb534d4e8257f9aa01e30f1, type: 3}
   - {fileID: 21300000, guid: 449ebb74b1d561e45803b7898c3706c6, type: 3}
   - {fileID: 21300000, guid: d98fd4f4fb43567498514ebe3de3686f, type: 3}
   - {fileID: 21300000, guid: 105035c53dafab3429ab39c236c10235, type: 3}
-  - {fileID: 21300000, guid: 5bb33246136b45541b512b39061012db, type: 3}
   - {fileID: 21300000, guid: 510f11a8a813d144c8b7962327d4d746, type: 3}
   - {fileID: 21300000, guid: 4b5eb8e953d4bdf4095cfa714ff30c62, type: 3}
   - {fileID: 21300000, guid: b7bc18cac22e22846901513c6a68be7c, type: 3}
@@ -72,11 +68,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 431b099d15f37964f9c983505ed41ca0, type: 3}
   - {fileID: 21300000, guid: 5af5a1bda0c2a47449560e2cbff9284e, type: 3}
   m_PackedSpriteNamesToIndex:
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 23"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 17"
   - Viewfinder center
   - Hand Up
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 20"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 14"
   - Resurs_25
   - "\u0420\u0435\u0441\u0443\u0440\u0441 11"

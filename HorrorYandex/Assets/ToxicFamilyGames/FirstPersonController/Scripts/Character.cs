@@ -14,13 +14,15 @@ namespace ToxicFamilyGames.FirstPersonController
 
         public bool IsBrokenNeck { get; set; }
 
-        public bool IsLocked;
+        public bool IsLocked { get; set; }
         [SerializeField]
         private float movementSpeed = 10;
         [SerializeField]
         private float maxUpHead = 30; 
         [SerializeField]
         private float maxDownHead = - 15;
+        [SerializeField]
+        private float speedNeckTwist = 1;
         [SerializeField]
         private Joystick joystick;
         [SerializeField]
@@ -85,17 +87,16 @@ namespace ToxicFamilyGames.FirstPersonController
         public IEnumerator NeckTwist()
         {
             IsBrokenNeck = false;
+            IsLocked = true;
             var monsterTr = GameObject.FindGameObjectWithTag("Monster").transform;
             Quaternion rotationForLookAnMonster;
-            IsLocked = true;
             while (true)
             {
                 rotationForLookAnMonster = Quaternion.LookRotation(monsterTr.forward) * Quaternion.Euler(0,180,0);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotationForLookAnMonster, 0.1f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotationForLookAnMonster, speedNeckTwist * Time.deltaTime);
                 if (Mathf.Abs(transform.rotation.eulerAngles.y - rotationForLookAnMonster.eulerAngles.y) < 0.1f) break;
                 yield return null;
             }
-            IsLocked = false;
             yield break;
         }
     }
