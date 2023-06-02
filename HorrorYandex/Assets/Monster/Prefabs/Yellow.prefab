@@ -576,7 +576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108b809cc76d19648981a5395d44aad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibilityDistance: 30
   distanceToPlayerGameOver: 3
   factorSpeedIsVisibilityPlayer: 1.5
 --- !u!1 &3939441966791564818

@@ -5,7 +5,6 @@ public class Level : MonoBehaviour
 {
     [SerializeField] protected LevelParameters levelType;
     private BackRoundMusic _backRoundMusic;
-    protected int _difficultyLevelNumber;
     protected bool _isGameOver;
 
     protected virtual void Start()
@@ -15,7 +14,8 @@ public class Level : MonoBehaviour
 
     public void WinLevel()
     {
-        FindObjectOfType<LevelsProgress>().OpenLevel(levelType);
+        var levelOpen = new LevelParameters { Type = levelType.Type, Number = levelType.Number + 1};
+        FindObjectOfType<LevelsProgress>(true).OpenLevel(levelOpen);
         FindObjectOfType<GameManager>().OnWin();
         _backRoundMusic.IsPause = true;
     }

@@ -1,5 +1,5 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public static class StorageManager
@@ -21,15 +21,16 @@ public static class StorageManager
     {
         _levelsOpened ??= GetOpenedLevels();
         _levelsOpened.Add(level);
-        GSPrefs.SetString(nameof(_levelsOpened), JsonUtility.ToJson(_levelsOpened));
+        var shellList = new ShellListLevelParameters() { LevelsOpened = _levelsOpened };
+        GSPrefs.SetString(nameof(_levelsOpened), JsonUtility.ToJson(shellList));
         GSPrefs.Save();
     }
 
     public static List<LevelParameters> GetOpenedLevels()
     {
-        _levelsOpened ??= JsonUtility.FromJson<List<LevelParameters>>
+        _levelsOpened ??= JsonUtility.FromJson<ShellListLevelParameters>
             (GSPrefs.GetString(nameof(_levelsOpened),
-            JsonUtility.ToJson(new List<LevelParameters>())));
+            JsonUtility.ToJson(new ShellListLevelParameters()))).LevelsOpened;
         return _levelsOpened;
     }
 
@@ -41,4 +42,10 @@ public static class StorageManager
 
     public static bool IsBoughtCamera() =>
         GSPrefs.GetInt(nameof(_isBoughtCamera), 0) == 1;
+
+    [Serializable]
+    private class ShellListLevelParameters
+    {
+        public List<LevelParameters> LevelsOpened;
+    }
 }

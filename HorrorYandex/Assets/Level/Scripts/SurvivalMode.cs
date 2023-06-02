@@ -7,7 +7,7 @@ public class SurvivalMode : Level
     [SerializeField] private GameObject battery;
     [SerializeField] private int amountBattery = 3;
     [Header("Timer")]
-    [SerializeField] private int[] timerTimeDependingOnTheLevelNumber;
+    [SerializeField] private int timerTime;
     [SerializeField] private TMP_Text _timerText;
     private float _timer;
 
@@ -28,7 +28,7 @@ public class SurvivalMode : Level
     {
         base.Start();
         _timerText.text = "0";
-        Timer = timerTimeDependingOnTheLevelNumber[levelType.Number];
+        Timer = timerTime;
         FindObjectOfType<SpawnManager>().CreateRandomObjectsOnLevel(battery, amountBattery);
     }
 

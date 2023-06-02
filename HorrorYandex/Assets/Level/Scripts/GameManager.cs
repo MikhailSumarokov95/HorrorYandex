@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ToxicFamilyGames.FirstPersonController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         generalSetting.LoadSettings();
         goPauseButton.SetActive(PlatformManager.IsMobile);
-        if (!PlatformManager.IsMobile) Cursor.lockState = CursorLockMode.Locked;
+        OnPause(false);
     }
 
     private void Update()

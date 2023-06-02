@@ -44,96 +44,45 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: a175cfe6eb4e71d4d9112d30719cb00f, type: 3}
+    - {fileID: 2800000, guid: 3bc9238da688f904698f49a7a16ccbbb, type: 3}
     - {fileID: 2800000, guid: 5af5a1bda0c2a47449560e2cbff9284e, type: 3}
     - {fileID: 2800000, guid: d98fd4f4fb43567498514ebe3de3686f, type: 3}
-    - {fileID: 2800000, guid: adc3217fc15c363478e3902fe5307e84, type: 3}
-    - {fileID: 2800000, guid: d343d17dada983940a92640f21a273a1, type: 3}
-    - {fileID: 2800000, guid: 6343823bdf156a6459f30171834d50e6, type: 3}
-    - {fileID: 2800000, guid: 5c64591db6436d543b21bbf59ac7a519, type: 3}
-    - {fileID: 2800000, guid: 920b833c44d053244b2ff19268b6614a, type: 3}
-    - {fileID: 2800000, guid: ea77fda1a68448040b3b56775ce59379, type: 3}
-    - {fileID: 2800000, guid: b7bc18cac22e22846901513c6a68be7c, type: 3}
-    - {fileID: 2800000, guid: e525917281c43354c83a675807193c35, type: 3}
-    - {fileID: 2800000, guid: 84e848f1abe81b143be91cf156e45d02, type: 3}
     - {fileID: 2800000, guid: 510f11a8a813d144c8b7962327d4d746, type: 3}
-    - {fileID: 2800000, guid: 09f917d39417d1c449b97eb597dd0ff8, type: 3}
-    - {fileID: 2800000, guid: 440c4ae3b621b3d4ba8bc2891a35ff2c, type: 3}
-    - {fileID: 2800000, guid: 449ebb74b1d561e45803b7898c3706c6, type: 3}
-    - {fileID: 2800000, guid: ceb673c5ddabad849b8d755cfde6352e, type: 3}
-    - {fileID: 2800000, guid: bf5aea2d1bde95444a8fb5880d378a9d, type: 3}
-    - {fileID: 2800000, guid: 5bb33246136b45541b512b39061012db, type: 3}
-    - {fileID: 2800000, guid: 97963def67c114d4cb3123a7212c1227, type: 3}
-    - {fileID: 2800000, guid: 37d1631f81305984cbd2b7ee48ab5554, type: 3}
-    - {fileID: 2800000, guid: bb9e6a92ceb534d4e8257f9aa01e30f1, type: 3}
-    - {fileID: 2800000, guid: 756ec310a142cdc4680d7b74afd950e5, type: 3}
-    - {fileID: 2800000, guid: 431b099d15f37964f9c983505ed41ca0, type: 3}
-    - {fileID: 2800000, guid: d64198f75c33df14eb4ba19ee5bb49a8, type: 3}
-    - {fileID: 2800000, guid: 3bc9238da688f904698f49a7a16ccbbb, type: 3}
-    - {fileID: 2800000, guid: 105035c53dafab3429ab39c236c10235, type: 3}
     - {fileID: 2800000, guid: 4b5eb8e953d4bdf4095cfa714ff30c62, type: 3}
+    - {fileID: 2800000, guid: bb9e6a92ceb534d4e8257f9aa01e30f1, type: 3}
+    - {fileID: 2800000, guid: 449ebb74b1d561e45803b7898c3706c6, type: 3}
+    - {fileID: 2800000, guid: 105035c53dafab3429ab39c236c10235, type: 3}
+    - {fileID: 2800000, guid: 431b099d15f37964f9c983505ed41ca0, type: 3}
+    - {fileID: 2800000, guid: b7bc18cac22e22846901513c6a68be7c, type: 3}
+    - {fileID: 2800000, guid: 5bb33246136b45541b512b39061012db, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 756ec310a142cdc4680d7b74afd950e5, type: 3}
-  - {fileID: 21300000, guid: ea77fda1a68448040b3b56775ce59379, type: 3}
-  - {fileID: 21300000, guid: 84e848f1abe81b143be91cf156e45d02, type: 3}
-  - {fileID: 21300000, guid: e525917281c43354c83a675807193c35, type: 3}
   - {fileID: 21300000, guid: bb9e6a92ceb534d4e8257f9aa01e30f1, type: 3}
-  - {fileID: 21300000, guid: 09f917d39417d1c449b97eb597dd0ff8, type: 3}
-  - {fileID: 21300000, guid: 440c4ae3b621b3d4ba8bc2891a35ff2c, type: 3}
   - {fileID: 21300000, guid: 449ebb74b1d561e45803b7898c3706c6, type: 3}
   - {fileID: 21300000, guid: d98fd4f4fb43567498514ebe3de3686f, type: 3}
-  - {fileID: 21300000, guid: ceb673c5ddabad849b8d755cfde6352e, type: 3}
   - {fileID: 21300000, guid: 105035c53dafab3429ab39c236c10235, type: 3}
   - {fileID: 21300000, guid: 5bb33246136b45541b512b39061012db, type: 3}
-  - {fileID: 21300000, guid: a175cfe6eb4e71d4d9112d30719cb00f, type: 3}
-  - {fileID: 21300000, guid: d64198f75c33df14eb4ba19ee5bb49a8, type: 3}
   - {fileID: 21300000, guid: 510f11a8a813d144c8b7962327d4d746, type: 3}
   - {fileID: 21300000, guid: 4b5eb8e953d4bdf4095cfa714ff30c62, type: 3}
   - {fileID: 21300000, guid: b7bc18cac22e22846901513c6a68be7c, type: 3}
-  - {fileID: 21300000, guid: 6343823bdf156a6459f30171834d50e6, type: 3}
-  - {fileID: 21300000, guid: 920b833c44d053244b2ff19268b6614a, type: 3}
-  - {fileID: 21300000, guid: 5c64591db6436d543b21bbf59ac7a519, type: 3}
-  - {fileID: 21300000, guid: bf5aea2d1bde95444a8fb5880d378a9d, type: 3}
-  - {fileID: 21300000, guid: d343d17dada983940a92640f21a273a1, type: 3}
   - {fileID: 21300000, guid: 3bc9238da688f904698f49a7a16ccbbb, type: 3}
   - {fileID: 21300000, guid: 431b099d15f37964f9c983505ed41ca0, type: 3}
   - {fileID: 21300000, guid: 5af5a1bda0c2a47449560e2cbff9284e, type: 3}
-  - {fileID: 21300000, guid: 37d1631f81305984cbd2b7ee48ab5554, type: 3}
-  - {fileID: 21300000, guid: adc3217fc15c363478e3902fe5307e84, type: 3}
-  - {fileID: 21300000, guid: 97963def67c114d4cb3123a7212c1227, type: 3}
   m_PackedSpriteNamesToIndex:
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 24"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 8"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 13"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 12"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 23"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 15"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 16"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 17"
   - Viewfinder center
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 18"
   - Hand Up
   - "\u0420\u0435\u0441\u0443\u0440\u0441 20"
-  - "Resurs_14 \u043C\u0430\u0441\u043A\u0430"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 26"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 14"
   - Resurs_25
   - "\u0420\u0435\u0441\u0443\u0440\u0441 11"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 3"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 7"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 7 \u043C\u0430\u0441\u043A\u0430"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 19"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 2"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 27"
   - "\u0420\u0435\u0441\u0443\u0440\u0441 25"
   - Viewfinder angle
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 22"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 1"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441 21"
   m_RenderDataMap: {}
   m_Tag: Atlas
   m_IsVariant: 0
