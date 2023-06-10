@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using ToxicFamilyGames.FirstPersonController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,12 +17,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private KeyCode keyPause;
     [SerializeField] private Monster[] monsters;
     [SerializeField] private Character player;
+    [SerializeField] private float waitTimeBeforeMidgameAd = 0.5f;
     private bool _isStartedCoroutineWaitAndStartLossTable;
 
     private Monster _currentMonster;
     public Monster CurrentMonster { get { return _currentMonster; } private set { _currentMonster = value; } }
 
-    public static bool IsPause { get; set; }
+    public static bool IsPause { get; private set; }
 
     private void Awake()
     {
@@ -47,7 +50,6 @@ public class GameManager : MonoBehaviour
     {
         OnPause(false);
         pauseTable.SetActive(false);
-        GSConnect.ShowMidgameAd();
         SceneManager.LoadScene(1);
     }
 
@@ -62,7 +64,7 @@ public class GameManager : MonoBehaviour
         gameTable.SetActive(false);
         winTable.SetActive(true);
         OnPause(true);
-        GSConnect.ShowMidgameAd();
+        StartCoroutine(WaitAndStartMidgameAd());
     }
 
     public void OnLoss()
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
     {
         pauseTable.SetActive(value);
         OnPause(value);
+        if (value) StartCoroutine(WaitAndStartMidgameAd());
     }
 
     private void OnPause(bool value)
@@ -91,7 +94,13 @@ public class GameManager : MonoBehaviour
         gameTable.SetActive(false);
         lossTable.SetActive(true);
         OnPause(true);
-        GSConnect.ShowMidgameAd();
+        StartCoroutine(WaitAndStartMidgameAd());
         _isStartedCoroutineWaitAndStartLossTable = false;
+    }
+
+    private IEnumerator WaitAndStartMidgameAd()
+    {
+        yield return new WaitForSecondsRealtime(waitTimeBeforeMidgameAd);
+        GSConnect.ShowMidgameAd();
     }
 }
