@@ -98,7 +98,7 @@ public class Guide : MonoBehaviour
 
         player.IsLocked = false;
 
-        StorageManager.SetGuideCompleted();
+        //StorageManager.SetGuideCompleted();
 
         SceneManager.LoadScene(1);
     }
